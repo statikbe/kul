@@ -1,10 +1,10 @@
 .excerpt {
   @include cf;
   display: block;
+  padding: $rh-xsm 0;
   color: inherit;
   text-decoration: none;
   &__header {
-    overflow: hidden;
     margin-bottom: $rh-xsm;
     h1, h2, h3, h4 {
       margin-bottom: 0;
@@ -13,24 +13,25 @@
       margin-bottom: 0;
     }
   }
+  .label + .meta__item {
+    margin-left: $rh-xsm;
+  }
+  .meta + &__title {
+    margin-top: $rh-xsm;
+  }
   &__footer {
-    margin-top: $rh-med;
+    margin-top: $rh-xsm;
   }
   &__img {
     overflow: hidden;
-    background: $gray-0;
     text-align: center;
     img {
-      @include transitions(transform);
+      @include transitions((transform,opacity,filter));
       display: block;
       width: 100%;
       height: auto;
       margin: 0 auto;
     }
-  }
-  &__date {
-    color: $gray-50;
-    @include fsRem($font-size-sml);
   }
   &__link {
     @include transitions(color);
@@ -38,42 +39,62 @@
     color: $color-link;
     text-decoration: underline;
   }
+  &__institution {
+    a {
+      @include link-variant($gray-75);
+      // color: $gray-75;
+    }
+    // text-decoration: underline;
+  }
+  &__date {
+    width: 100%;
+    padding: $rh-med 0;
+  }
+  & + & {
+    border-top: 1px solid $gray-25;
+  }
 }
 
 .excerpt__aside {
   .excerpt__img {
-    text-align: center;
     img {
       width: auto;
     }
   }
   @include breakpoint(map-get($breakpoints, sml)){
     float: left;
-    width: 140px;
+    width: 150px;
     margin-right: 20px;
   };
   @include breakpoint(map-get($breakpoints, sml), 'max-width'){
     margin-bottom: $rh-med;
   };
-  @include breakpoint(map-get($breakpoints, lrg)){
+  @include breakpoint(map-get($breakpoints, sml)){
     ~ .excerpt__main {
-      margin-left: 160px;
+      margin-left: 170px;
     }
   };
   .excerpt--hz-large & {
     @include breakpoint(map-get($breakpoints, sml)){
-      width: 140px;
+      width: 150px;
       margin-right: 20px;
     };
     @include breakpoint(map-get($breakpoints, sml)){
       width: 210px;
     };
-    @include breakpoint(map-get($breakpoints, lrg)){
+    @include breakpoint(map-get($breakpoints, sml)){
       width: 280px;
       ~ .excerpt__main {
         margin-left: 300px;
       }
     };
+  }
+  .excerpt--hz-small & {
+    width: 40px;
+    margin-right: 0;
+    ~ .excerpt__main {
+      margin-left: 50px;
+    }
   }
 }
 
@@ -88,13 +109,62 @@
       // color: tomato;
       text-decoration: none;
     }
-    .excerpt__img {
-      img {
-        transform: translateZ(0) scale(1.1);
-      }
+    // .excerpt__img {
+    //   img {
+    //     transform: scale(1.1);
+    //   }
+    // }
+    .excerpt__title {
+      color: $blue-75;
+      text-decoration: underline;
     }
     .excerpt__link {
       color: $color-link;
     }
   }
+}
+
+
+// Agenda
+.excerpt--activity {
+  position: relative;
+  overflow: hidden;
+  padding: $rh-sml 0;
+  .excerpt__img {
+    background: transparent;
+    // @include breakpoint(map-get($breakpoints, sml)) {
+    //   position: absolute;
+    // }
+    &:hover {
+      img {
+        @include grayscale;
+        opacity: .5;
+      }
+    }
+  }
+  .excerpt__aside {
+    background: $gray-0;
+    color: $gray-50;
+    text-align: center;
+    position: relative;
+    // @include breakpoint(map-get($breakpoints, sml)) {
+    //   position: absolute;
+    //   top: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   display: flex;
+    //   align-items: center;
+    // }
+  }
+  &:hover {
+    .excerpt__aside {
+      background: $color-brand-primary;
+      color: $white;
+    }
+  }
+}
+
+// Alumni
+.excerpt--alumni {
+  padding: $rh-sml 0;
 }
