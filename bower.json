@@ -1,0 +1,18 @@
+{
+  "name": "KUL",
+  "version": "0.1.0",
+  "homepage": "https://github.com/statikbe/kul",
+  "authors": [
+    "Bart Verbruggen <bart@statik.be>"
+  ],
+  "description": "The main frontend files for KU Leuven",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
