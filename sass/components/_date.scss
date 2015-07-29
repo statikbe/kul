@@ -1,0 +1,9 @@
+.date {
+  @include fsRem(map-get($font-sizes, lrg));
+  font-weight: $font-weight-light;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.date__days {
+  @include fsRem(map-get($font-sizes, xxl));
+}
