@@ -1,16 +1,19 @@
 .meta {
-  margin-top: $rh-xxs;
-  color: $gray-50;
+  // margin-top: $rh-xxs;
+  color: $blue-50;
   line-height: 1.2;
+  &--grayed-out {
+    color: $gray-50;
+  }
   &__item {
     position: relative;
     display: inline-block;
-    padding-right: $rh-med;
+    padding-right: $rh-sml;
     &:after {
       content: '';
       height: .9em;
       position: relative;
-      left: (($rh-med / 2) + 2);
+      left: (($rh-sml / 2) + 2);
       top: 0.1em;
       display: inline-block;
       border-left: 1px solid $gray-50;
@@ -21,5 +24,21 @@
         display: none;
       }
     }
+    .icon {
+      margin-right: 5px;
+    }
+    &--lrg {
+      @include fsRem(map-get($font-sizes, lrg));
+    }
   }
+
+  &--detail {
+    margin-bottom: $rh-xsm;
+    color: $color-text;
+    @include fsRem(map-get($font-sizes, lrg));
+    &--lrg {
+      @include fsRem(map-get($font-sizes, xlr));
+    }
+  }
+
 }

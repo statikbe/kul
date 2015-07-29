@@ -1,0 +1,22 @@
+.label {
+  display: inline-block;
+  padding: $rh-xxs $rh-xsm;
+  background: $green-50;
+  color: $white;
+  border-radius: $border-radius-med;
+  line-height: 1;
+  @include fsRem(map-get($font-sizes, xsm));
+  text-transform: uppercase;
+
+  @each $type, $color in $notice-colors {
+    &--#{$type} {
+      color: $color;
+      background: transparent;
+      border-color: $color;
+    }
+  }
+  &--grayed-out {
+    background: $gray-0;
+    color: $gray-50;
+  }
+}
