@@ -1,0 +1,227 @@
+// Headings
+%ext-heading {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+
+  margin-top: $line-height-base;
+  margin-bottom: ($line-height-base * .5);
+  a {
+    @include link-variant(inherit, $blue-50);
+    text-decoration: none;
+  }
+  small,
+  .small {
+    font-size: 65%;
+    font-weight: normal;
+    line-height: 1;
+    color: $gray-50;
+    // text-transform: none;
+  }
+  span,
+  div {
+    // text-transform: none;
+    font-weight: $font-weight-regular;
+  }
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.heading {
+  // &--alt {
+  //   color: $headings-color-alt;
+  // }
+  &--spaced {
+    letter-spacing: $letter-spacing-sml;
+  }
+}
+.heading--1,
+h1 {
+  @extend %ext-heading;
+  margin-top: 0;
+  @include fsRem($font-size-h1);
+  letter-spacing: $letter-spacing-sml;
+  text-transform: uppercase;
+  span,
+  div {
+    @include fsRem(30px);
+    line-height: lh(32px, 30px);
+  }
+}
+.heading--2,
+h2 {
+  @extend %ext-heading;
+  @include fsRem($font-size-h2);
+  letter-spacing: $letter-spacing-sml;
+  text-transform: uppercase;
+}
+.heading--3,
+h3 {
+  @extend %ext-heading;
+  @include fsRem($font-size-h3);
+  // font-weight: $font-weight-regular;
+  font-weight: $font-weight-semibold;
+}
+.heading--4,
+h4 {
+  @extend %ext-heading;
+  @include fsRem($font-size-h4);
+  font-weight: $font-weight-semibold;
+}
+.heading--5,
+h5 {
+  @extend %ext-heading;
+  @include fsRem($font-size-h5);
+  font-weight: $font-weight-semibold;
+  margin-bottom: $rh-xxs;
+}
+.heading--6,
+h5 {
+  @extend %ext-heading;
+  @include fsRem($font-size-h6);
+  font-weight: $font-weight-semibold;
+  margin-bottom: $rh-xxs;
+  color: $gray-75;
+}
+
+h1, h2, h3, h4, h5 {
+  + h1, + h2, + h3, + h4, + h5 {
+    margin-top: 0;
+  }
+}
+
+// Stand out text
+.text--lead {
+  @include fsRem(map-get($font-sizes, lrg));
+  font-family: $font-family-serif;
+  font-style: italic;
+  &--page {
+    @include fsRem(map-get($font-sizes, xlr));
+    font-family: $font-family-serif;
+    font-style: italic;
+  }
+}
+
+.text--info {
+  color: $gray-75;
+}
+
+// Alignment
+.text--left {
+  text-align: left;
+}
+.text--right {
+  text-align: right;
+}
+.text--center {
+  text-align: center;
+}
+.text--justify {
+  text-align: justify;
+}
+.text--nowrap {
+  white-space: nowrap;
+}
+
+// .text--bp-med--left
+@each $bp, $px in $breakpoints {
+  @include breakpoint($px, 'min-width') {
+    .text--bp-#{$bp}--left {
+      text-align: left;
+    }
+  }
+}
+// .text--bp-med--right
+@each $bp, $px in $breakpoints {
+  @include breakpoint($px, 'min-width') {
+    .text--bp-#{$bp}--right {
+      text-align: right;
+    }
+  }
+}
+
+// Transformation
+.text--lowercase {
+  text-transform: lowercase;
+}
+.text--uppercase {
+  text-transform: uppercase;
+}
+.text--capitalize {
+  text-transform: capitalize;
+}
+
+.text--overflow {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Mark
+mark,
+.text--mark {
+
+}
+
+// Del, s
+del,
+s {
+  text-decoration: line-through;
+}
+
+// Underline
+u {
+  text-decoration: underline;
+}
+
+// Small
+small,
+.small {
+  font-size: fs(map-get($font-sizes, sml));
+}
+
+@each $size, $px in $font-sizes {
+  .text--size-#{$size} {
+    @include fsRem($px);
+  }
+}
+
+// Strong
+strong {
+  font-weight: $font-weight-bold;
+}
+
+@each $name, $weight in $font-weights {
+  .text--weight-#{$name} {
+    font-weight: $weight;
+  }
+}
+
+// Italic
+em {
+  font-style: italic;
+}
+
+// Abbr
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted $gray-50;
+}
+
+// Blockquote
+blockquote {
+  border-left: 3px solid $gray-25;
+  margin: $line-height-base 0;
+  padding-left: $rh-xsm;
+}
+
+kbd {
+  padding: $rh-xxs;
+  border: 1px solid $gray-25;
+  border-radius: $border-radius-sml;
+}

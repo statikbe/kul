@@ -1,0 +1,71 @@
+%panel-block {
+  padding: $rh-sml;
+  @include breakpoint(map-get($breakpoints, lrg)){
+    padding: $rh-med;
+  };
+}
+%status-block {
+  @extend %panel-block;
+  color: $white;
+  a:not(.btn) {
+    @include link-variant(inherit);
+  }
+  li {
+    &:before {
+      color: inherit
+    }
+  }
+}
+
+.block {
+  display: block;
+  & + & {
+    margin-top: $rh-sml;
+  }
+
+  &--panel,
+  &--indented {
+    @extend %panel-block;
+  }
+  &--indented {
+    padding: 0;
+    @include breakpoint(map-get($breakpoints, med)){
+      padding: $rh-med;
+    };
+  }
+
+  &--bg,
+  &--gray {
+    padding: $rh-sml;
+    background: $gray-0;
+  }
+
+  &--border {
+    & + & {
+      border-top: 1px solid $gray-25;
+      margin-top: 0;
+    }
+  }
+
+  &--primary {
+    @extend %status-block;
+    background: $color-brand-primary;
+  }
+  &--secondary {
+    @extend %status-block;
+    background: $color-brand-secondary;
+  }
+
+  @each $type, $color in $notice-colors {
+    &--#{$type} {
+      @extend %status-block;
+      background: $color;
+      .btn--close {
+        color: $white;
+        &:hover {
+          color: lighten($white, 10%);
+        }
+      }
+    }
+  }
+}
