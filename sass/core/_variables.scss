@@ -1,0 +1,168 @@
+// Colors
+//
+$gray-100: #333333 !default;
+$gray-75: #8f8e8e !default;
+$gray-50: #bcbcbc !default;
+$gray-25: #d8d9da !default;
+$gray-0: #f0f0f0 !default;
+
+$black: #111 !default;
+$white: #fff !default;
+
+$blue-75: #004070;
+$blue-50: #08a7eb;
+
+$green-50: #25b8a9;
+
+// Brand colors
+$color-brand-primary: $blue-50 !default;
+$color-brand-secondary: $green-50 !default;
+
+$notice-colors: (
+  success: #3c763d,
+  info: #2e82ad,
+  warning: #9b7035,
+  danger: #bd292c
+);
+
+// Background color
+$color-background: $white !default;
+// Text color
+$color-text: $gray-100 !default;
+
+// Link color
+$color-link: $color-brand-primary !default;
+$color-link-hover: mix(black, $color-link, 25%) !default;
+$color-link-visited: mix(black, $color-link, 5%) !default;
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+$font-family-sans: 'Open Sans', sans-serif !default;
+$font-family-serif: 'Merriweather', Georgia, Times, serif !default;
+$font-family-icons: 'Material Icons' !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base: $font-family-sans !default;
+
+$font-size-root: 16px !default;
+$font-sizes: (
+  xxl: 38px,
+  xlr: 24px,
+  lrg: 18px,
+  med: 16px,
+  sml: 14px,
+  xsm: 12px
+);
+
+$font-size-base: map-get($font-sizes, med) !default;
+
+$font-size-h1: map-get($font-sizes, xxl) !default;
+$font-size-h2: map-get($font-sizes, xlr) !default;
+$font-size-h3: 21px !default;
+$font-size-h4: 18px !default;
+$font-size-h5: 18px !default;
+$font-size-h6: 16px !default;
+
+$font-weights: (
+  thin: 100,
+  light: 300,
+  regular: 400,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800
+);
+$font-weight-thin: map-get($font-weights, thin) !default;
+$font-weight-light: map-get($font-weights, light) !default;
+$font-weight-regular: map-get($font-weights, regular) !default;
+$font-weight-semibold: map-get($font-weights, semibold) !default;
+$font-weight-bold: map-get($font-weights, bold) !default;
+$font-weight-extrabold: map-get($font-weights, extrabold) !default;
+$font-weight-base: $font-weight-regular !default;
+
+$line-height-base: 26px !default;
+
+$line-height-sml: 1.2 !default;
+
+$letter-spacing-base: .15em;
+
+$letter-spacing-xms: .05em;
+$letter-spacing-sml: .1em;
+$letter-spacing-med: $letter-spacing-base;
+$letter-spacing-lrg: .25em;
+
+// Fonts
+//
+$fonts-path: '../fonts' !default;
+$fonts-icon-class: icon;
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family: inherit !default;
+$headings-font-weight: $font-weight-bold !default;
+$headings-line-height: 1.15 !default;
+$headings-color: inherit !default;
+$headings-color-alt: $color-text !default;
+
+// Layers
+// ------
+//
+// For the z-index
+$zindex-layer-1: 10;
+$zindex-layer-2: 20;
+$zindex-layer-3: 30;
+$zindex-layer-4: 40;
+$zindex-layer-5: 2050;
+
+// Breakpoints
+// -----------
+$breakpoints: (
+  xxs: 320px,
+  xsm: 440px,
+  sml: 660px,
+  med: 820px,
+  lrg: 980px,
+  xlr: 1200px
+);
+
+$breakpoints-flyout: map-get($breakpoints, med);
+
+$breakpoints-legacy: false !default;
+
+// Rhythm
+$rh-xxs: 20px * .25;
+$rh-xsm: 20px * .5;
+$rh-sml: 20px;
+$rh-med: 20px * 1.5;
+$rh-lrg: 20px * 2;
+$rh-xlr: 20px * 2.5;
+
+$rhythm: (
+  xxs: $rh-xxs,
+  xsm: $rh-xsm,
+  sml: $rh-sml,
+  med: $rh-med,
+  lrg: $rh-lrg,
+  xlr: $rh-xlr
+);
+
+// Grid
+// ----
+//
+// columns          - The total amount of columns
+// gutter           - The amount of space between two columns
+// container-*      - The total width of the container for large / medium / small
+$grid-gutter-width: $rh-sml !default;
+$grid-columns: 12 !default;
+$grid-container-width: 1200px !default;
+
+// Transitions
+// -----------
+//
+$transition-duration-base: 150ms;
+$transition-easing-base: ease-in-out;
+
+// Border radius
+// -------------
+//
+$border-radius-sml: 2px;
+$border-radius-med: 3px;
+$border-radius-lrg: 5px;

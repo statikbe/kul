@@ -1,0 +1,40 @@
+.section {
+  overflow: hidden;
+  padding: 0 0 $rh-sml;
+  &--reset {};
+
+  &--bg,
+  &--border,
+  &--border-thick {
+    @extend .section--reset;
+    padding-top: $rh-sml;
+  }
+  &--border {
+    border-top: 1px solid $gray-25;
+    &-thick {
+      border-top: 3px solid $gray-25;
+    }
+  }
+  &--bg{
+    background: $gray-0;
+  }
+  &--light {
+    @extend .section--bg;
+  }
+  &--dark {
+    @extend .section--bg;
+    background: $gray-75;
+    color: $white;
+    a:not(.btn) {
+      color: inherit;
+    }
+  }
+
+  &--no-padding {
+    padding: 0 !important;
+  }
+}
+
+.section--reset + .section {
+  padding-top: $rh-sml;
+}

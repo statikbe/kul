@@ -1,0 +1,25 @@
+.link {
+  &--ext {
+    position: relative;
+    display: inline-block;
+    padding-right: 18px;
+    &:after {
+      content: "\E315";
+      position: absolute;
+      top: 1px;
+      right: 0;
+      font-family: $font-family-icons;
+    }
+  }
+  &--grayscale {
+    img {
+      @include grayscale;
+      @include transitions((filter));
+    }
+    &:hover {
+      img {
+        filter: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+%ext-button-style {
+  @include transitions((background, border));
+  display: inline-block;
+  padding: 14px 20px;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  border-radius: $border-radius-med;
+  // box-shadow: inset -2px -2px 0 0 shade($color-brand-primary);
+  font-weight: $font-weight-bold;
+  line-height: normal;
+  &:active,
+  &.active {
+    outline: 0;
+  }
+}
+.btn {
+  @include button-variant($white, ($blue-50, $blue-75), (shade($blue-50, 25%), shade($blue-75, 25%)));
+  @extend %ext-button-style;
+  // Disabled
+  &--disabled,
+  &[disabled] {
+    opacity: 0.35;
+    cursor: not-allowed;
+    color: $gray-25;
+  }
+
+  @each $type, $color in $notice-colors {
+    &--#{$type} {
+      @include button-variant($white, hsl(hue($color), 50%, 60%), hsl(hue($color), 50%, 50%));
+    }
+  }
+
+  &--link {
+    @include link-variant($color-link, $color-link-hover, $color-link-visited);
+    @include fsRem($font-size-base);
+    padding: 0;
+    background: none;
+    border: none;
+    font-weight: $font-weight-regular;
+    text-transform: none;
+  }
+
+  &--large {
+    @include fsRem(map-get($font-sizes, lrg));
+    padding: 10px 15px;
+  }
+
+  &--small {
+    padding: 2px 10px;
+  }
+
+  &--xsmall {
+    @include fsRem(map-get($font-sizes, sml));
+    padding: 0px 10px;
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+}
+
+.btn--cancel,
+input[type=reset] {
+  @include button-variant($gray-100, ($gray-25, $gray-50), (shade($gray-25, 25%), shade($gray-50, 25%)));
+  @extend %ext-button-style;
+}
+
+.btn--close {
+  @include fsRem(18px);
+  padding: 5px;
+  background: $white;
+  border-color: $white;
+  &:hover,
+  &:focus {
+    border-color: $white;
+    background: $white;
+  }
+}
+
+a.btn {
+  text-decoration: none;
+  &--ghost {
+    @include button-variant(($blue-50, $white), transparent, $blue-50);
+    border-width: 1px;
+    // box-shadow: none;
+    @include background-sliding($blue-50, $white);
+  }
+  &--ghost-inv {
+    @include button-variant($white, transparent, $white);
+    border-width: 1px;
+    // box-shadow: none;
+    @include background-sliding($white, $color-text);
+  }
+}
+
+button,
+input[type=submit] {
+  @extend .btn;
+}
