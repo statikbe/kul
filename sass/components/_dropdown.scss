@@ -26,7 +26,6 @@
   display: none; // none by default, but block on "open" of the menu
   float: left;
   min-width: 160px;
-  padding: 5px 0;
   margin: 2px 0 0; // override default ul
   @include fsRem(map-get($font-sizes, med));
   text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
