@@ -103,8 +103,8 @@ p {
 }
 
 hr {
-  margin-top: ($line-height-base * .5);
-  margin-bottom: ($line-height-base * .5);
+  margin-top: $line-height-base;
+  margin-bottom: $line-height-base;
   border: 0;
   border-top: 1px solid $gray-25;
 }
@@ -171,9 +171,9 @@ iframe {
   float: right;
 }
 
-.material-icons {
+i.material-icons {
   font-size: inherit;
-  line-height: 1;
+  line-height: 1.2;
   vertical-align: middle;
   position: relative;
   top: -1px;

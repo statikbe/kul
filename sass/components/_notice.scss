@@ -1,5 +1,5 @@
 .notice {
-  border: 1px solid;
+  // border: 1px solid;
   padding: $rh-sml;
   padding-right: $rh-med;
   margin-bottom: $line-height-base;
@@ -9,7 +9,7 @@
     &--#{$type} {
       color: $color;
       background: hsl(hue($color), saturation($color), 95%);
-      border-color: hsl(hue($color), saturation($color), 85%);
+      // border-color: hsl(hue($color), saturation($color), 85%);
       .btn--close {
         color: lighten($color, 20%);
         &:hover {
@@ -19,11 +19,12 @@
     }
   }
 
-  > p,
-  > ul {
+  p,
+  ul {
     margin-bottom: 0;
+    margin-top: 0;
   }
-  > p + p {
+  p + p {
     margin-top: $rh-xsm;
   }
   .btn--close {

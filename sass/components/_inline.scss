@@ -1,26 +1,32 @@
-.inline {
-  @include cf;
-  margin-right: -$rh-xsm;
-  margin-left: -$rh-xsm;
-  margin-top: -$rh-xsm;
-  &__item {
+@mixin inline-variant($spacing) {
+  margin-top: -$spacing;
+  margin-left: -$spacing;
+  margin-right: -$spacing;
+  .inline__item {
     float: left;
     vertical-align: baseline;
-    margin-top: $rh-xsm;
-    margin-right: $rh-xsm;
-    margin-left: $rh-xsm;
+    margin-top: $spacing;
+    margin-right: $spacing;
+    margin-left: $spacing;
   }
-  &--narrow {
-    margin-top: -$rh-xxs;
-    margin-left: -$rh-xxs;
-    margin-right: -$rh-xxs;
-    .inline__item {
-      margin-top: $rh-xxs;
-      margin-right: $rh-xxs;
-      margin-left: $rh-xxs;
-    }
+}
+
+.inline {
+  @include cf;
+  @include inline-variant($rh-xsm);
+  &--sml {
+    @include inline-variant($rh-xxs);
   }
   &:last-child {
     margin-bottom: 0;
+  }
+
+  &--share {
+    @include inline-variant(($rh-xxs / 2));
+    font-family: $font-family-serif;
+    font-style: italic;
+    .inline__item:first-child {
+      margin-right: $rh-xsm;
+    }
   }
 }

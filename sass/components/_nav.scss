@@ -32,13 +32,17 @@
     font-weight: $font-weight-bold;
     letter-spacing: $letter-spacing-sml;
     a {
-      @include link-variant($gray-50, $blue-50);
+      @include link-variant($gray-75, $blue-75);
       display: block;
-      padding: 15px 20px;
+      padding: 13px 0;
+    }
+    li + li {
+      margin-left: $rh-xlr;
     }
   } // end .-main
 
   &--tabs {
+    border-bottom: 1px solid $gray-25;
     ul {
       margin-right: -$rh-sml;
       margin-left: -$rh-sml;
@@ -86,21 +90,18 @@
   &--language {
     float: right;
     text-transform: uppercase;
-    font-weight: $font-weight-bold;
-    margin-top: 20px;
     li {
       float: none;
       margin-bottom: 5px;
     }
     a {
       color: black;
-      background: gray;
       display: block;
-      padding: 10px;
+      text-decoration: none;
       &:hover,
       &:focus,
       &.active {
-        color: pink;
+        color: $blue-50;
       }
     }
   } // end .-language
@@ -121,6 +122,12 @@
     line-height: lh($line-height-base);
     li {
       float: none;
+      & + li {
+        margin-top: $rh-xxs;
+      }
+    }
+    a {
+      @include link-variant($color-text, $blue-50);
     }
   } // end .-list
 }

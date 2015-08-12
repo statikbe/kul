@@ -1,6 +1,24 @@
 img {
   max-width: 100%;
   height: auto;
+  vertical-align: top;
+}
+
+.images {
+  position: relative;
+  &__more {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-layer-1;
+    padding: $rh-xxs $rh-xsm;
+    background: $blue-50;
+    color: $white;
+    .icon {
+      @include fsRem(map-get($font-sizes, lrg));
+      margin-right: $rh-xxs;
+    }
+  }
 }
 
 .image {
@@ -17,6 +35,9 @@ img {
     float: left;
     margin-right: $rh-sml;
     margin-bottom: $rh-xsm;
+  }
+  &--round {
+    border-radius: 50%;
   }
 }
 

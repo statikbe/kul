@@ -19,6 +19,7 @@
   background-color: $white;
   color: $color-text;
   line-height: normal;
+  border-radius: $border-radius-sml;
   &:focus {
     outline: none;
     border-color: $gray-75;
@@ -42,23 +43,6 @@
 
 form {
   margin-bottom: ($line-height-base * .5);
-  // Modifiers
-
-  &--inline {
-    display: flex;
-    flex-wrap: wrap;
-    .form__item {
-      flex: 1 1 150px;
-      margin-bottom: 0;
-    }
-    .form__actions {
-      margin-top: auto;
-    }
-    .btn {
-      margin-left: $rh-xxs;
-    }
-  }
-
   &.is-submitted {
     position: relative;
     opacity: .5;
@@ -73,6 +57,23 @@ form {
       z-index: 100;
       cursor: wait;
       cursor: progress;
+    }
+  }
+}
+
+.form {
+  &--inline {
+    display: flex;
+    flex-wrap: wrap;
+    .form__item {
+      flex: 1 1 150px;
+      margin-bottom: 0;
+    }
+    .form__actions {
+      margin-top: auto;
+    }
+    .btn {
+      margin-left: $rh-xxs;
     }
   }
 }
@@ -111,11 +112,11 @@ form {
   position: relative;
   label {
     position: absolute;
-    top: 9px;
+    top: 15px;
     left: 10px;
     z-index: 1;
-    width: 15px;
-    color: $gray-25;
+    width: 24px;
+    color: $gray-75;
     text-align: center;
   }
 }
@@ -150,7 +151,7 @@ label,
     input {
       position: absolute;
       left: 0;
-      top: 4px;
+      top: 7px;
     }
   }
 }
@@ -174,6 +175,7 @@ input[type=time],
 input[type=url],
 input[type=week] {
   @extend %ext-input-style;
+  box-sizing: border-box;
 }
 textarea,
 .form__textarea {
@@ -197,7 +199,7 @@ textarea,
 }
 select,
 .form__select {
-  @extend %ext-input-style;
+  // @extend %ext-input-style;
   background: none;
   display: block;
   cursor: pointer;
@@ -247,11 +249,15 @@ select,
   }
 }
 .form__description,
-.form__help {
+.form__help,
+.form__countdown {
   clear: both;
   color: $gray-50;
   @include fsRem(13px);
   // font-style: italic;
+}
+.form__countdown {
+  float: right;
 }
 
 // Error handeling

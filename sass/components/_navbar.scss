@@ -4,30 +4,79 @@
   ul {
     @include listreset;
   }
-  &--top {
-    padding: $rh-xxs 0;
-    background: $blue-75;
-    color: $white;
-    @include fsRem(map-get($font-sizes, sml));
-    a:not(.btn) {
-      color: inherit;
-    }
-    .nav  {
-      margin-top: 3px;
-    }
-    .navbar__logo {
-      margin-top: 4px;
-    }
-
-  }
-  &--sub {
-    padding-bottom: 0;
-    background: $gray-0;
-    @include fsRem(map-get($font-sizes, sml));
-    text-transform: uppercase;
-  }
   .nav--tabs {
     float: none;
+    border-bottom: 0;
+  }
+  .form + .nav {
+    border-left: 1px solid rgba($blue-50, .5);
+    padding-left: $rh-sml;
+  }
+  .dropdown__menu {
+    padding: $rh-xsm 0;
+  }
+}
+.navbar--global {
+  padding: 0;
+  background: $blue-75;
+  color: $white;
+  @include fsRem(map-get($font-sizes, sml));
+  a:not(.btn) {
+    color: inherit;
+    text-decoration: none;
+  }
+  .nav  {
+    &--inline {
+      margin-top: 16px;
+      li + li {
+        border-left: 0;
+        margin-left: $rh-med;
+        padding: 0;
+      }
+    }
+  }
+  & + & {
+    border-top: 4px solid shade($blue-75);
+  }
+  .nav--user {
+    .dropdown-toggle {
+      display: inline-block;
+      padding: 14px $rh-xxs 10px;
+      border-bottom: 4px solid transparent;
+    }
+    .open {
+      .dropdown-toggle {
+        border-bottom-color: $blue-50;
+        background-color: $white;
+        color: $blue-75;
+      }
+    }
+  }
+  .flyout__link {
+    margin-top: $rh-xsm;
+  }
+}
+.navbar--local {
+  padding-bottom: 0;
+  background: $gray-0;
+  @include fsRem(map-get($font-sizes, sml));
+  .list--unordered {
+    margin-top: $rh-xxs;
+    li {
+      &:before {
+        color: $blue-50;
+      }
+      & + li {
+        margin-top: 0;
+      }
+    }
+  }
+  footer & {
+    padding: $rh-med 0;
+  }
+  .nav--list {
+    text-transform: uppercase;
+    margin-bottom: $rh-sml;
   }
 }
 
@@ -58,18 +107,22 @@
 
 .navbar__form {
   margin-bottom: 0;
-  padding: 0 $rh-xsm;
+  padding: 9px $rh-sml;
   color: $color-text;
+  width: 300px;
   .form__text {
-    padding: 4px;
+    padding: 5px 10px;
   }
   .btn {
-    padding: 4px 8px;
+    @include fsRem(18px);
+    margin-left: 10px;
+    padding: 2px 6px 0;
   }
 }
 
 .navbar__title {
   letter-spacing: $letter-spacing-sml;
+  color: $blue-50;
 }
 
 .navbar__left {
@@ -88,9 +141,11 @@
   .no-svg & {
     background-image: url(../img/logo.png);
   }
-  .navbar--top & {
+  .navbar--global & {
     background-image: url(../img/svg/logo-simple.svg);
     width: 130px;
-    height: 18px;
+    height: 30px;
+    margin-top: $rh-xsm;
+    margin-bottom: $rh-xsm;
   }
 }
