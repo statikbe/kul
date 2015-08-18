@@ -35,6 +35,7 @@
       @include link-variant($gray-75, $blue-75);
       display: block;
       padding: 13px 0;
+      text-decoration: none;
     }
     li + li {
       margin-left: $rh-xlr;
@@ -61,13 +62,12 @@
         display: block;
         text-decoration: none;
         padding: $rh-xsm 0;
-        color: $gray-100;
+        @include link-variant($gray-100, $black);
         background: linear-gradient(to right,$gray-50, $gray-50) bottom center no-repeat;
         background-size: 0 4px;
         @include transitions(background-size);
         &:hover,
         &:focus {
-          color: $black;
           background-size: 100% 4px;
         }
         &.active {
@@ -98,12 +98,10 @@
       margin-bottom: 5px;
     }
     a {
-      color: black;
+      @include link-variant($gray-100, $blue-50);
       display: block;
       text-decoration: none;
       padding: $rh-xsm 0;
-      &:hover,
-      &:focus,
       &.active {
         color: $blue-50;
       }
@@ -135,7 +133,7 @@
     li {
       float: none;
       & + li {
-        margin-top: $rh-xxs;
+        margin-top: $rh-xsm;
       }
     }
     a {

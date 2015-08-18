@@ -76,6 +76,14 @@ form {
       margin-left: $rh-xxs;
     }
   }
+  &--search {
+    .form__text {
+      flex: 1 1 150px;
+    }
+    .btn {
+      margin-left: $rh-xsm;
+    }
+  }
 }
 
 .form__group {

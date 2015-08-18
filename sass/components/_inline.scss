@@ -25,6 +25,9 @@
     @include inline-variant(($rh-xxs / 2));
     font-family: $font-family-serif;
     font-style: italic;
+    a {
+      @include link-variant($blue-75);
+    }
     .inline__item:first-child {
       margin-right: $rh-xsm;
     }
