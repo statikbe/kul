@@ -8,7 +8,7 @@
     float: none;
     border-bottom: 0;
   }
-  .form + .nav {
+  .form + .flyout__link {
     border-left: 1px solid rgba($blue-50, .5);
     padding-left: $rh-sml;
   }
@@ -25,13 +25,26 @@
     color: inherit;
     text-decoration: none;
   }
-  .nav  {
+  .list--unordered {
+    a {
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .nav {
     &--inline {
       margin-top: 16px;
       li + li {
         border-left: 0;
         margin-left: $rh-med;
         padding: 0;
+      }
+      .dropdown__menu {
+        li + li {
+          margin: 0;
+        }
       }
     }
   }
@@ -55,10 +68,18 @@
   .flyout__link {
     margin-top: $rh-xsm;
   }
+
+  .grid {
+    padding: $rh-sml 0;
+  }
+  footer & {
+    padding: $rh-sml 0;
+  }
 }
 .navbar--local {
   padding-bottom: 0;
   background: $gray-0;
+  z-index: $zindex-layer-1;
   @include fsRem(map-get($font-sizes, sml));
   .list--unordered {
     margin-top: $rh-xxs;
@@ -77,6 +98,27 @@
   .nav--list {
     text-transform: uppercase;
     margin-bottom: $rh-sml;
+  }
+}
+.navbar--footer {
+  .nav--inline {
+    margin-top: 17px;
+  }
+  .inline--share {
+    margin-top: 15px;
+  }
+}
+.navbar--kuleuven {
+  background: $white url(../img/emblem-kuleuven.png) no-repeat -30% center;
+}
+.navbar--small {
+  .nav {
+    &--inline {
+      margin-top: 0;
+      > ul > li > a {
+        padding: $rh-xxs 0;
+      }
+    }
   }
 }
 
@@ -121,8 +163,12 @@
 }
 
 .navbar__title {
+  font-weight: $font-weight-bold;
   letter-spacing: $letter-spacing-sml;
-  color: $blue-50;
+  text-transform: uppercase;
+  .navbar--local & {
+    color: $blue-50;
+  }
 }
 
 .navbar__left {

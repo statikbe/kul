@@ -90,6 +90,9 @@
   &--language {
     float: right;
     text-transform: uppercase;
+    border-left: 1px solid $gray-25;
+    margin-left: $rh-sml;
+    padding-left: $rh-sml;
     li {
       float: none;
       margin-bottom: 5px;
@@ -98,6 +101,7 @@
       color: black;
       display: block;
       text-decoration: none;
+      padding: $rh-xsm 0;
       &:hover,
       &:focus,
       &.active {
@@ -115,6 +119,14 @@
       border-left: 1px solid $gray-25;
       margin-left: $rh-xsm;
       padding-left: $rh-xsm;
+    }
+    .dropdown__menu {
+      li + li {
+        margin: 0;
+      }
+    }
+    a {
+      display: inline-block;
     }
   }
 
