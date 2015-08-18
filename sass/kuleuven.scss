@@ -13,7 +13,8 @@
 @import "core/tables";
 @import "core/buttons";
 @import 'core/links';
-// @import "core/icons"; // replaced by google material icons: https://www.google.com/design/icons/
+@import "core/icons";  // replaced by google material icons: https://www.google.com/design/icons/
+                       // Wel terug een _icons.scss aanmaken die een icon--before en een icon--after heeft met data-icon attribuut
 @import "core/forms";
 @import "core/images";
 @import 'core/lists';
@@ -22,9 +23,10 @@
 // @import 'components/main';
 @import 'components/section';
 @import 'components/block';
+@import 'components/notice';
 @import 'components/spacer';
 @import 'components/excerpt';
-// @import 'components/header';
+@import 'components/header';
 @import 'components/meta';
 @import 'components/inline';
 @import 'components/breadcrumbs';
@@ -32,6 +34,7 @@
 @import 'components/panel';
 @import 'components/label';
 @import 'components/date';
+@import 'components/collapse';
 // @import 'components/footer';
 
 @import 'components/nav';
@@ -41,7 +44,7 @@
 @import 'components/tags';
 @import "components/dropdown";
 @import "components/vcard";
-// @import 'components/flyout';
+@import 'components/flyout';
 // @import 'components/carousel';
 // @import 'components/tabs';
 // @import 'components/button-group';

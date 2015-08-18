@@ -2,14 +2,17 @@
   border: 1px solid $gray-25;
   &--bg {
     background: tint($gray-0, 50%);
-    & + & {
-      background: $gray-0;
-    }
   }
-  // border-radius: $border-radius-sml;
-  & + & {
-    margin-top: 0;
-    border-top: 0;
+  &--glue {
+    & + & {
+      margin-top: 0;
+      border-top: 0;
+    }
+    &.panel--bg {
+      & + & {
+        background: $gray-0;
+      }
+    }
   }
   &__header {
     padding: $rh-sml;

@@ -20,9 +20,14 @@
     // text-transform: none;
   }
   span,
-  div {
+  div,
+  p {
     // text-transform: none;
     font-weight: $font-weight-regular;
+  }
+  div,
+  p {
+    text-transform: none;
   }
   &:first-child {
     margin-top: 0;

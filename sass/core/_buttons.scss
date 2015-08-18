@@ -38,6 +38,11 @@
     border: none;
     font-weight: $font-weight-regular;
     text-transform: none;
+    text-decoration: underline;
+    &:hover {
+      background: transparent;
+
+    }
   }
 
   &--large {

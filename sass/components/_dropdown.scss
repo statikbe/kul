@@ -4,7 +4,7 @@
   i {
     @include transitions(transform);
   }
-  &.open i {
+  &.open i:last-child {
     transform: rotate(-180deg);
   }
 }
@@ -27,12 +27,13 @@
   float: left;
   min-width: 160px;
   margin: 2px 0 0; // override default ul
+  padding: $rh-xsm 0;
   @include fsRem(map-get($font-sizes, med));
   text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
   background-color: $white;
   border: 1px solid $gray-0; // IE8 fallback
   border: 1px solid $gray-0;
-  box-shadow: 0 5px 6px rgba($black, .25);
+  box-shadow: 0 2px 6px rgba($black, .05);
   background-clip: padding-box;
 
   // Aligns the dropdown menu to right
@@ -51,24 +52,33 @@
   }
 
   // Links within the dropdown menu
-  > li > a {
+  > li {
+    margin: 0;
     display: block;
-    padding: 3px 10px;
-    clear: both;
-    font-weight: normal;
-    line-height: $line-height-base;
+    float: none;
     color: $color-text;
-    text-decoration: none;
-    white-space: nowrap; // prevent links from randomly breaking onto new lines
-    &:hover,
-    &:focus {
-      background: $blue-50;
-      color: $white;
+    > a {
+      display: block;
+      padding: 4px 15px;
+      clear: both;
+      font-weight: normal;
+      line-height: $line-height-base;
+      background: $white;
+      color: $color-text;
+      text-decoration: none;
+      white-space: nowrap; // prevent links from randomly breaking onto new lines
+      &:hover,
+      &:focus {
+        background: $blue-50;
+        color: $white;
+      }
     }
   }
 
   // Navbar dropdowns
   .navbar & {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     margin-top: 0;
     border-top: 0;
   }
