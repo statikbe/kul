@@ -10,16 +10,13 @@
     @include listreset;
   }
   a:not(.btn) {
-    @include link-variant($blue-75);
-    text-decoration: underline;
-    &:hover {
-      text-decoration: none;
-    }
+    // @include link-variant($blue-75);
+    // text-decoration: underline;
+    // &:hover {
+    //   text-decoration: none;
+    // }
   }
   .nav {
-    a {
-      text-decoration: none;
-    }
     .dropdown__menu a {
       &:hover {
         color: $white;

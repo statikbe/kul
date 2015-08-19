@@ -124,7 +124,18 @@
       }
     }
     a {
+      @include link-variant($blue-75, $gray-75);
+      text-decoration: underline;
       display: inline-block;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &--user {
+    a {
+      text-decoration: none;
     }
   }
 
