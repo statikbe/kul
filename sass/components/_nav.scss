@@ -59,13 +59,13 @@
       & + & {
       }
       a {
+        @include link-variant($gray-100, $black);
+        @include transitions(background-size);
         display: block;
         text-decoration: none;
         padding: $rh-xsm 0;
-        @include link-variant($gray-100, $black);
         background: linear-gradient(to right,$gray-50, $gray-50) bottom center no-repeat;
         background-size: 0 4px;
-        @include transitions(background-size);
         &:hover,
         &:focus {
           background-size: 100% 4px;
