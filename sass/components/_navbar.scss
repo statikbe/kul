@@ -53,7 +53,6 @@
   & + & {
     border-top: 4px solid shade($blue-75);
   }
-
   a:not(.btn) {
     @include link-variant($white);
   }
@@ -82,10 +81,11 @@
       }
     }
     &--user {
+      margin-top: 10px;
       .dropdown-toggle {
         display: inline-block;
         // padding: 14px $rh-xxs 10px;
-        padding: 14px $rh-xxs 0;
+        padding: 4px 0 0;
         border-bottom: 4px solid transparent;
       }
       // .open {
@@ -115,10 +115,14 @@
   }
 }
 .navbar--local {
+  @include transitions(border);
   padding-top: $rh-xsm;
   padding-bottom: 0;
   background: $gray-0;
   z-index: $zindex-layer-1;
+  .is-sticky & {
+    border-bottom: 1px solid $gray-25;
+  }
   @include fsRem(map-get($font-sizes, sml));
   a {
     @include link-variant($blue-50);
@@ -277,8 +281,14 @@
     width: 130px;
     height: 30px;
     margin-top: 9px;
+    margin-right: $rh-sml;
     &--footer {
       margin-top: 12px;
+      margin-right: $rh-med;
+    }
+    & + .nav--user {
+      border-left: 1px solid rgba($blue-50, .3);
+      padding-left: $rh-sml;
     }
   }
   .navbar--footer & {

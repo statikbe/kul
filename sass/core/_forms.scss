@@ -59,6 +59,9 @@ form {
       cursor: progress;
     }
   }
+  .grid + .grid {
+    margin-top: $rh-sml;
+  }
 }
 
 .form {
@@ -86,31 +89,33 @@ form {
   }
 }
 
-.form__group {
-  margin-bottom: ($line-height-base * .5);
-  h1,
-  h2,
-  h3,
-  h4 {
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-}
-.form__item,
-.form__actions {
-  margin-bottom: ($line-height-base * .5);
+// .form__group {
+//   margin-bottom: ($line-height-base * .5);
+//   h1,
+//   h2,
+//   h3,
+//   h4 {
+//     &:first-child {
+//       margin-top: 0;
+//     }
+//   }
+// }
+.form__item {
+  margin-bottom: $rh-sml;
   &--radios,
   &--checkboxes {}
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 .form__actions {
-  margin-top: -($line-height-base * .5);
-  margin-right: -($line-height-base * .5);
-  margin-left: -($line-height-base * .5);
+  margin-right: -$rh-sml;
+  margin-bottom: -$rh-sml;
+  margin-left: -$rh-sml;
   > * {
-    margin-top: ($line-height-base * .5);
-    margin-right: ($line-height-base * .5);
-    margin-left: ($line-height-base * .5);
+    margin-right: $rh-sml;
+    margin-bottom: $rh-sml;
+    margin-left: $rh-sml;
   }
 }
 

@@ -43,48 +43,7 @@
   } // end .-main
 
   &--tabs {
-    border-bottom: 1px solid $gray-25;
-    ul {
-      margin-right: -$rh-sml;
-      margin-left: -$rh-sml;
-      padding: 0;
-    }
-    li {
-      @include fsRem(map-get($font-sizes, sml));
-      position: relative;
-      z-index: $zindex-layer-1;
-      display: inline-block;
-      margin: 0 $rh-sml;
-      text-transform: uppercase;
-      & + & {
-      }
-      a {
-        @include link-variant($gray-100, $black);
-        @include transitions(background-size);
-        display: block;
-        text-decoration: none;
-        padding: $rh-xsm 0;
-        background: linear-gradient(to right,$gray-50, $gray-50) bottom center no-repeat;
-        background-size: 0 4px;
-        &:hover,
-        &:focus {
-          background-size: 100% 4px;
-        }
-        &.active {
-          color: $color-brand-primary;
-          background-image: linear-gradient(to right,$color-brand-primary, $color-brand-primary);
-          background-size: 100% 4px;
-        }
-      }
-      &.active,
-      &.open {
-        > a {
-          color: $color-brand-primary;
-          background-image: linear-gradient(to right,$color-brand-primary, $color-brand-primary);
-          background-size: 100% 4px;
-        }
-      }
-    }
+    @extend .tabbable;
   } // end .nav--tabs
 
   &--language {
