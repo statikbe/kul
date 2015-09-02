@@ -2,12 +2,11 @@
   &--ext {
     position: relative;
     display: inline-block;
-    padding-right: 18px;
     &:after {
       content: "\E315";
-      position: absolute;
-      top: 1px;
-      right: 0;
+      display: inline-block;
+      margin-left: 2px;
+      vertical-align: middle;
       font-family: $font-family-icons;
     }
   }
@@ -21,5 +20,8 @@
         filter: none;
       }
     }
+  }
+  &--no-underline {
+    text-decoration: none;
   }
 }

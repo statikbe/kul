@@ -1,23 +1,42 @@
 .navbar {
   @include clearfix();
   padding: $rh-sml 0;
+
+  &--no-padding {
+    padding: 0;
+  }
+
   ul {
     @include listreset;
   }
   a:not(.btn) {
-    @include link-variant($blue-75);
-    text-decoration: underline;
-    &:hover {
-      text-decoration: none;
-    }
+    // @include link-variant($blue-75);
+    // text-decoration: underline;
+    // &:hover {
+    //   text-decoration: none;
+    // }
   }
   .nav {
-    a {
-      text-decoration: none;
+    .dropdown__menu a {
+      &:hover {
+        color: $white;
+      }
     }
     &--tabs {
-      float: none;
+      float: left;
+      width: 90%;
       border-bottom: 0;
+      a {
+        @include link-variant($gray-100, $black);
+      }
+    }
+    &--language {
+      a {
+        @include link-variant($gray-100, $black);
+        &.active {
+          color: $blue-50;
+        }
+      }
     }
   }
   .form + .flyout__link {
@@ -28,15 +47,12 @@
   }
 }
 .navbar--global {
-  padding: 0;
   background: $blue-75;
   color: $white;
   @include fsRem(map-get($font-sizes, sml));
-
   & + & {
     border-top: 4px solid shade($blue-75);
   }
-
   a:not(.btn) {
     @include link-variant($white);
   }
@@ -64,21 +80,22 @@
         }
       }
     }
-  }
-  .nav--user {
-    .dropdown-toggle {
-      display: inline-block;
-      // padding: 14px $rh-xxs 10px;
-      padding: 14px $rh-xxs 0;
-      border-bottom: 4px solid transparent;
+    &--user {
+      margin-top: 10px;
+      .dropdown-toggle {
+        display: inline-block;
+        // padding: 14px $rh-xxs 10px;
+        padding: 4px 0 0;
+        border-bottom: 4px solid transparent;
+      }
+      // .open {
+      //   .dropdown-toggle {
+      //     border-bottom-color: $blue-50;
+      //     background-color: $white;
+      //     color: $blue-75;
+      //   }
+      // }
     }
-    // .open {
-    //   .dropdown-toggle {
-    //     border-bottom-color: $blue-50;
-    //     background-color: $white;
-    //     color: $blue-75;
-    //   }
-    // }
   }
   a.flyout__link {
     margin-top: $rh-xsm;
@@ -91,15 +108,21 @@
       margin-top: 0;
     }
   }
-  footer & {
-    padding: $rh-sml 0;
+  .dropdown__menu {
+    a {
+      @include link-variant($color-text);
+    }
   }
 }
 .navbar--local {
+  @include transitions(border);
   padding-top: $rh-xsm;
   padding-bottom: 0;
   background: $gray-0;
   z-index: $zindex-layer-1;
+  .is-sticky & {
+    border-bottom: 1px solid $gray-25;
+  }
   @include fsRem(map-get($font-sizes, sml));
   a {
     @include link-variant($blue-50);
@@ -124,22 +147,22 @@
   }
   .inline--share {
     a {
-      @include link-variant($blue-50);
+      @include link-variant($blue-50, $blue-75);
     }
   }
 }
 .navbar--footer {
   .nav--inline {
-    margin-top: 17px;
+    margin-top: 7px;
   }
   .inline--share {
-    margin-top: 15px;
+    margin-top: 4px;
   }
 }
 .navbar--sedes {
   background-image: url(../img/sedes-kuleuven.png);
   background-repeat: no-repeat;
-  background-position: -30% center;
+  background-position: -30% top;
 }
 .navbar--small {
   .nav {
@@ -229,6 +252,9 @@
   .navbar--local & {
     color: $blue-50;
   }
+  &--no-margin {
+    margin-bottom: 0;
+  }
 }
 .navbar__subtitle {
   text-transform: uppercase;
@@ -254,8 +280,20 @@
     background-image: url(../img/svg/logo-simple.svg);
     width: 130px;
     height: 30px;
-    margin-top: 12px;
-    // margin-top: $rh-xsm;
-    // margin-bottom: $rh-xsm;
+    margin-top: 9px;
+    margin-right: $rh-sml;
+    &--footer {
+      margin-top: 12px;
+      margin-right: $rh-med;
+    }
+    & + .nav--user {
+      border-left: 1px solid rgba($blue-50, .3);
+      padding-left: $rh-sml;
+    }
+  }
+  .navbar--footer & {
+    width: 107px;
+    height: 38px;
+    background-size: 100%;
   }
 }

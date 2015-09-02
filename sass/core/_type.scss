@@ -115,6 +115,17 @@ h1, h2, h3, h4, h5 {
   color: $gray-75;
 }
 
+.text--serif {
+  font-family: $font-family-serif;
+}
+.text--sans-serif {
+  font-family: $font-family-sans;
+}
+
+.text--primary {
+  color: $color-brand-primary;
+}
+
 // Alignment
 .text--left {
   text-align: left;
@@ -134,7 +145,7 @@ h1, h2, h3, h4, h5 {
 
 // .text--bp-med--left
 @each $bp, $px in $breakpoints {
-  @include breakpoint($px, 'min-width') {
+  @include breakpoint($px, min-width) {
     .text--bp-#{$bp}--left {
       text-align: left;
     }
@@ -142,7 +153,7 @@ h1, h2, h3, h4, h5 {
 }
 // .text--bp-med--right
 @each $bp, $px in $breakpoints {
-  @include breakpoint($px, 'min-width') {
+  @include breakpoint($px, min-width) {
     .text--bp-#{$bp}--right {
       text-align: right;
     }

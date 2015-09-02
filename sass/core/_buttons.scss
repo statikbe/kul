@@ -14,6 +14,9 @@
   &.active {
     outline: 0;
   }
+  small {
+    font-weight: $font-weight-regular;
+  }
 }
 .btn {
   @include button-variant($white, ($blue-50, $blue-75), (shade($blue-50, 25%), shade($blue-75, 25%)));
@@ -93,9 +96,9 @@ a.btn {
     @include background-sliding($white, transparent);
   }
   &--ghost-inv {
-    @include button-variant($white, transparent, $white);
+    @include button-variant($color-text, transparent, $color-text);
     border-width: 1px;
-    @include background-sliding($white, $color-text);
+    @include background-sliding($white, transparent);
   }
 }
 

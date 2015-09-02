@@ -1,0 +1,23 @@
+.banner {
+  background-size: cover;
+  padding: 90px 0;
+  h2 {
+    @include fsRem(map-get($font-sizes, xxl));
+  }
+  p {
+    @include fsRem(map-get($font-sizes, xlr));
+    font-family: $font-family-serif;
+    font-style: italic;
+    line-height: $line-height-sml;
+  }
+
+  //
+  // Modifications
+  //
+  &--image {
+    color: $white;
+    a:not(.btn) {
+      @include link-variant($white);
+    }
+  }
+}

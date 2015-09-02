@@ -1,13 +1,16 @@
 @mixin inline-variant($spacing) {
-  margin-top: -$spacing;
+  margin-bottom: -$spacing;
   margin-left: -$spacing;
   margin-right: -$spacing;
   .inline__item {
-    float: left;
-    vertical-align: baseline;
-    margin-top: $spacing;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: $spacing;
     margin-right: $spacing;
     margin-left: $spacing;
+  }
+  img {
+    vertical-align: middle;
   }
 }
 

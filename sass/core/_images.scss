@@ -1,4 +1,5 @@
-img {
+img,
+svg {
   max-width: 100%;
   height: auto;
   vertical-align: top;
@@ -38,6 +39,14 @@ img {
   }
   &--round {
     border-radius: 50%;
+  }
+
+  &--profile {
+    img {
+      width: 95px;
+      height: 95px;
+      object-fit: cover;
+    }
   }
 }
 
