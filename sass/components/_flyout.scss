@@ -123,13 +123,13 @@
   @include fsRem(map-get($font-sizes, med));
   position: relative;
   display: inline-block;
-  padding-right: $rh-sml;
+  padding: 6px 40px 8px 20px;
   font-weight: $font-weight-bold;
   text-transform: uppercase;
   .lines {
     @extend %ext-flyout-line;
-    top: 12px;
-    right: 0;
+    top: 18px;
+    right: 16px;
     &:before {
       @extend %ext-flyout-line;
       content: '';

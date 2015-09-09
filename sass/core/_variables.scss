@@ -12,11 +12,14 @@ $white: #fff !default;
 $blue-75: #004070;
 $blue-50: #08a7eb;
 
+$petrol-50: #1d8db0;
+
 $green-50: #25b8a9;
 
 // Brand colors
-$color-brand-primary: $blue-50 !default;
-$color-brand-secondary: $green-50 !default;
+$color-primary: $blue-50 !default;
+$color-secondary: $petrol-50 !default;
+$color-tertiary: $blue-75 !default;
 
 $notice-colors: (
   success: #3c763d,
@@ -31,7 +34,7 @@ $color-background: $white !default;
 $color-text: $gray-100 !default;
 
 // Link color
-$color-link: $color-brand-primary !default;
+$color-link: $color-primary !default;
 $color-link-hover: mix(black, $color-link, 25%) !default;
 $color-link-visited: mix(black, $color-link, 5%) !default;
 

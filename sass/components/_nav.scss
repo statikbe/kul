@@ -44,6 +44,9 @@
 
   &--tabs {
     @extend .tabbable;
+    .nav__item--home {
+      margin-right: 0;
+    }
   } // end .nav--tabs
 
   &--language {

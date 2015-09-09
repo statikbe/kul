@@ -10,7 +10,7 @@
     @include listreset;
   }
   a:not(.btn) {
-    // @include link-variant($blue-75);
+    // @include link-variant($color-secondary);
     // text-decoration: underline;
     // &:hover {
     //   text-decoration: none;
@@ -34,24 +34,27 @@
       a {
         @include link-variant($gray-100, $black);
         &.active {
-          color: $blue-50;
+          color: $color-primary;
         }
       }
     }
-  }
-  .form + .flyout__link {
-    margin-left: $rh-sml;
   }
   .dropdown__menu {
     padding: $rh-xsm 0;
   }
 }
 .navbar--global {
-  background: $blue-75;
+  background: $color-secondary;
   color: $white;
   @include fsRem(map-get($font-sizes, sml));
+  border-bottom: $rh-med solid $gray-0;
   & + & {
-    border-top: 4px solid shade($blue-75);
+    border-top: 2px solid rgba($color-tertiary, .1);
+    border-bottom: 0;
+    padding: $rh-sml 0 0;
+  }
+  &.next-sibling-is-visible {
+    border-bottom: 0;
   }
   a:not(.btn) {
     @include link-variant($white);
@@ -81,24 +84,22 @@
       }
     }
     &--user {
-      margin-top: 10px;
       .dropdown-toggle {
         display: inline-block;
-        // padding: 14px $rh-xxs 10px;
-        padding: 4px 0 0;
+        padding: 9px 0 5px;
         border-bottom: 4px solid transparent;
       }
       // .open {
       //   .dropdown-toggle {
-      //     border-bottom-color: $blue-50;
+      //     border-bottom-color: $color-primary;
       //     background-color: $white;
-      //     color: $blue-75;
+      //     color: $color-secondary;
       //   }
       // }
     }
   }
   a.flyout__link {
-    margin-top: $rh-xsm;
+    background: rgba($color-tertiary, .3);
     text-decoration: none;
   }
 
@@ -115,23 +116,24 @@
   }
 }
 .navbar--local {
-  @include transitions(border);
+  @include transitions((border));
   padding-top: $rh-xsm;
   padding-bottom: 0;
   background: $gray-0;
   z-index: $zindex-layer-1;
   .is-sticky & {
+    // padding-top: $rh-xsm;
     border-bottom: 1px solid $gray-25;
   }
   @include fsRem(map-get($font-sizes, sml));
   a {
-    @include link-variant($blue-50);
+    @include link-variant($color-primary);
   }
   .list--unordered {
     margin-top: $rh-xsm;
     li {
       &:before {
-        color: $blue-50;
+        color: $color-primary;
       }
       & + li {
         margin-top: $rh-xxs;
@@ -147,7 +149,7 @@
   }
   .inline--share {
     a {
-      @include link-variant($blue-50, $blue-75);
+      @include link-variant($color-primary, $color-secondary);
     }
   }
 }
@@ -162,7 +164,7 @@
 .navbar--sedes {
   background-image: url(../img/sedes-kuleuven.png);
   background-repeat: no-repeat;
-  background-position: -30% top;
+  background-position: -30% 5%;
 }
 .navbar--small {
   .nav {
@@ -206,38 +208,46 @@
       }
     }
   }
+  & + .navbar__form {
+    margin-left: $rh-sml;
+  }
 }
 
 .navbar__form {
   margin-bottom: 0;
-  padding: 9px 0;
   width: 300px;
   color: $color-text;
   .form__text {
-    padding: 5px 10px;
-  }
-  .btn {
-    @include fsRem(18px);
-    padding: 2px 8px 0;
-  }
-  .navbar--global & {
-    .form__text {
-      border-radius: $border-radius-sml 0 0 $border-radius-sml;
-      border: none;
-      &:focus {
-        ~ .btn {
-          color: $white;
-          background: $blue-50;
-          border-color: $blue-50;
-        }
+    padding: 10px 18px 11px;
+    background: rgba($white, .1);
+    color: $white;
+    border-radius: 0;
+    border: none;
+    &::-webkit-input-placeholder {
+      color: rgba($white, .9);
+    }
+    &::-moz-placeholder {
+      color: rgba($white, .9);
+    }
+    &:focus {
+      background: $white;
+      color: $color-tertiary;
+      ~ .btn {
+        color: $white;
+        background: $color-primary;
+        border-color: $color-primary;
       }
     }
-    .btn {
-      @include button-variant($gray-50, $white);
-      margin-left: 0;
-      border: 1px solid $gray-0;
-      border-width: 0 0 0 1px;
-      border-radius: 0 $border-radius-sml $border-radius-sml 0;
+  }
+  .btn {
+    @include button-variant($white, $color-primary);
+    @include fsRem(22px);
+    padding: 0 8px 0;
+    margin-left: 0;
+    border-width: 0;
+    border-radius: 0;
+    i {
+      top: -3px;
     }
   }
   @include breakpoint(map-get($breakpoints, med)) {
@@ -250,7 +260,7 @@
   letter-spacing: $letter-spacing-sml;
   text-transform: uppercase;
   .navbar--local & {
-    color: $blue-50;
+    color: $color-primary;
   }
   &--no-margin {
     margin-bottom: 0;
@@ -277,19 +287,16 @@
     background-image: url(../img/logo.png);
   }
   .navbar--global & {
-    background-image: url(../img/svg/logo-simple.svg);
-    width: 130px;
-    height: 30px;
-    margin-top: 9px;
-    margin-right: $rh-sml;
-    &--footer {
-      margin-top: 12px;
-      margin-right: $rh-med;
-    }
-    & + .nav--user {
-      border-left: 1px solid rgba($blue-50, .3);
-      padding-left: $rh-sml;
-    }
+    // background-image: url(../img/svg/logo-simple.svg);
+    width: 140px;
+    height: 50px;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 14px;
+    // & + .nav--user {
+    //   border-left: 1px solid rgba($color-primary, .3);
+    //   padding-left: $rh-sml;
+    // }
   }
   .navbar--footer & {
     width: 107px;

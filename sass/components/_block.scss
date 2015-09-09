@@ -49,11 +49,11 @@
 
   &--primary {
     @extend %status-block;
-    background: $color-brand-primary;
+    background: $color-primary;
   }
   &--secondary {
     @extend %status-block;
-    background: $color-brand-secondary;
+    background: $color-tertiary;
   }
 
   @each $type, $color in $notice-colors {
