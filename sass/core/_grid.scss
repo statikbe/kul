@@ -35,6 +35,14 @@
       float: right;
     }
   }
+  &--flex {
+    display: flex;
+    [class*=grid__] {
+      display: flex;
+      flex-direction: column;
+      align-content: stretch;
+    }
+  }
 }
 .grid__item {
   @include make-column($grid-columns, $grid-columns);

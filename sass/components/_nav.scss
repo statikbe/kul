@@ -12,18 +12,27 @@
 }
 
 .nav {
-  &--service {
+  &--inline {
     @extend %ext-default-nav;
-    float: right;
-    margin-bottom: 15px;
     li + li {
-      &:before {
-        content: '\2022';
-        display: inline-block;
-        margin: 0 5px;
+      border-left: 1px solid $gray-25;
+      margin-left: $rh-xsm;
+      padding-left: $rh-xsm;
+    }
+    .dropdown__menu {
+      li + li {
+        margin: 0;
       }
     }
-  } // end .-service
+    a {
+      @include link-variant($blue-75, $gray-75);
+      text-decoration: underline;
+      display: inline-block;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 
   &--main {
     @extend %ext-default-nav;
@@ -42,10 +51,33 @@
     }
   } // end .-main
 
+  &--service {
+    @extend %ext-default-nav;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    li + li {
+      border-left: 0;
+      margin-left: $rh-med;
+      padding: 0;
+    }
+    .dropdown__menu {
+      li + li {
+        margin: 0;
+      }
+    }
+    @include breakpoint(map-get($breakpoints, lrg), max-width) {
+      clear: left;
+      margin-top: 0;
+    }
+  }
+
   &--tabs {
     @extend .tabbable;
     .nav__item--home {
       margin-right: 0;
+    }
+    li a {
+      padding: $rh-xsm 0;
     }
   } // end .nav--tabs
 
@@ -70,34 +102,14 @@
     }
   } // end .-language
 
-  &--inline {
-    @extend %ext-default-nav;
-    // ul {
-    //   @extend %ext-listreset;
-    // }
-    li + li {
-      border-left: 1px solid $gray-25;
-      margin-left: $rh-xsm;
-      padding-left: $rh-xsm;
-    }
-    .dropdown__menu {
-      li + li {
-        margin: 0;
-      }
-    }
-    a {
-      @include link-variant($blue-75, $gray-75);
-      text-decoration: underline;
-      display: inline-block;
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
-
   &--user {
     a {
       text-decoration: none;
+    }
+    .dropdown-toggle {
+      display: inline-block;
+      padding: 9px 0 5px;
+      border-bottom: 4px solid transparent;
     }
   }
 
@@ -113,4 +125,10 @@
       @include link-variant($color-text, $blue-50);
     }
   } // end .-list
+
+  &--on-dark {
+    a {
+      @include link-variant($white, $gray-25);
+    }
+  }
 }

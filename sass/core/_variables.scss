@@ -22,10 +22,10 @@ $color-secondary: $petrol-50 !default;
 $color-tertiary: $blue-75 !default;
 
 $notice-colors: (
-  success: #3c763d,
-  info: #2e82ad,
-  warning: #9b7035,
-  danger: #bd292c
+  success: #3ebd92,
+  info: #1d8db0,
+  warning: #eeb42f,
+  danger: #e03f47
 );
 
 // Background color
@@ -56,6 +56,19 @@ $font-sizes: (
   sml: 14px,
   xsm: 12px
 );
+
+$font-size: (
+  base: (
+    reg: 14px,
+    med: 16px
+  ),
+  h1: (
+    reg: 28px,
+    med: 32px,
+    xlr: 38px
+  )
+);
+
 
 $font-size-base: map-get($font-sizes, med) !default;
 
@@ -121,7 +134,7 @@ $breakpoints: (
   xxs: 320px,
   xsm: 440px,
   sml: 660px,
-  med: 820px,
+  med: 800px,
   lrg: 980px,
   xlr: 1200px
 );

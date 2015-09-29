@@ -1,5 +1,4 @@
 .banner {
-  background-size: cover;
   padding: 90px 0;
   h2 {
     @include fsRem(map-get($font-sizes, xxl));
@@ -16,6 +15,8 @@
   //
   &--image {
     color: $white;
+    background-position: 50% 50%;
+    background-size: cover;
     a:not(.btn) {
       @include link-variant($white);
     }
