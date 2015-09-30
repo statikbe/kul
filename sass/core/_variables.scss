@@ -12,17 +12,20 @@ $white: #fff !default;
 $blue-75: #004070;
 $blue-50: #08a7eb;
 
+$petrol-50: #1d8db0;
+
 $green-50: #25b8a9;
 
 // Brand colors
-$color-brand-primary: $blue-50 !default;
-$color-brand-secondary: $green-50 !default;
+$color-primary: $blue-50 !default;
+$color-secondary: $petrol-50 !default;
+$color-tertiary: $blue-75 !default;
 
 $notice-colors: (
-  success: #3c763d,
-  info: #2e82ad,
-  warning: #9b7035,
-  danger: #bd292c
+  success: #3ebd92,
+  info: #1d8db0,
+  warning: #eeb42f,
+  danger: #e03f47
 );
 
 // Background color
@@ -31,7 +34,7 @@ $color-background: $white !default;
 $color-text: $gray-100 !default;
 
 // Link color
-$color-link: $color-brand-primary !default;
+$color-link: $color-primary !default;
 $color-link-hover: mix(black, $color-link, 25%) !default;
 $color-link-visited: mix(black, $color-link, 5%) !default;
 
@@ -53,6 +56,19 @@ $font-sizes: (
   sml: 14px,
   xsm: 12px
 );
+
+$font-size: (
+  base: (
+    reg: 14px,
+    med: 16px
+  ),
+  h1: (
+    reg: 28px,
+    med: 32px,
+    xlr: 38px
+  )
+);
+
 
 $font-size-base: map-get($font-sizes, med) !default;
 
@@ -118,7 +134,7 @@ $breakpoints: (
   xxs: 320px,
   xsm: 440px,
   sml: 660px,
-  med: 820px,
+  med: 800px,
   lrg: 980px,
   xlr: 1200px
 );

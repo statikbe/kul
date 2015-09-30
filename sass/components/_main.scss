@@ -1,0 +1,10 @@
+.page-wrap {
+  @include transitions((transform));
+  z-index: 0;
+  &.collapse {
+    display: block;
+  }
+  &.in {
+    transform: translateX(-240px);
+  }
+}

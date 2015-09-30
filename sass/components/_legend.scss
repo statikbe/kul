@@ -1,0 +1,15 @@
+.legend {
+  @include fsRem(map-get($font-sizes, sml));
+  color: $gray-50;
+  &__item {
+    position: relative;
+    padding-left: 20px;
+  }
+  span {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+  }
+}

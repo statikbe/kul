@@ -1,0 +1,43 @@
+.progress {
+  @include fsRem(map-get($font-sizes, sml));
+  height: 15px;
+  margin-bottom: $rh-sml;
+  padding: 2px;
+  background-color: $gray-0;
+  border-radius: 10px;
+  &--values-top {
+    margin-top: $rh-lrg;
+    .progress__bar {
+      position: relative;
+    }
+    .progress__text {
+      position: absolute;
+      left: 0;
+      top: -$line-height-base;
+    }
+  }
+}
+
+.progress__bar {
+  float: left;
+  width: 0;
+  height: 100%;
+  color: map-get($notice-colors, info);
+  background-color: map-get($notice-colors, info);
+  &:first-child {
+    border-radius: 10px 0 0 10px;
+  }
+  &:last-child {
+    border-radius: 0 10px 10px 0;
+  }
+  & + & {
+    border-left: 1px solid $gray-0;
+  }
+
+  @each $type, $color in $notice-colors {
+    &--#{$type} {
+      background: $color;
+      color: $color;
+    }
+  }
+}

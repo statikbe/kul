@@ -26,7 +26,7 @@
       @include transitions(background-size);
       display: block;
       text-decoration: none;
-      padding: $rh-xsm 0;
+      padding: $rh-sml 0;
       background: linear-gradient(to right,$gray-50, $gray-50) bottom center no-repeat;
       background-size: 0 4px;
       &:hover,
@@ -34,16 +34,16 @@
         background-size: 100% 4px;
       }
       &.active {
-        color: $color-brand-primary;
-        background-image: linear-gradient(to right,$color-brand-primary, $color-brand-primary);
+        color: $color-primary;
+        background-image: linear-gradient(to right,$color-primary, $color-primary);
         background-size: 100% 4px;
       }
     }
     &.active,
     &.open {
       > a {
-        color: $color-brand-primary;
-        background-image: linear-gradient(to right,$color-brand-primary, $color-brand-primary);
+        color: $color-primary;
+        background-image: linear-gradient(to right,$color-primary, $color-primary);
         background-size: 100% 4px;
       }
     }

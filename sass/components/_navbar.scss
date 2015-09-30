@@ -1,7 +1,7 @@
 .navbar {
   @include clearfix();
   padding: $rh-sml 0;
-
+  position: relative;
   &--no-padding {
     padding: 0;
   }
@@ -10,7 +10,7 @@
     @include listreset;
   }
   a:not(.btn) {
-    // @include link-variant($blue-75);
+    // @include link-variant($color-secondary);
     // text-decoration: underline;
     // &:hover {
     //   text-decoration: none;
@@ -24,84 +24,85 @@
     }
     &--tabs {
       float: left;
-      width: 90%;
+      width: 85%;
       border-bottom: 0;
       a {
         @include link-variant($gray-100, $black);
+      }
+      @include breakpoint(map-get($breakpoints, med)) {
+        display: block;
+      }
+      @include breakpoint(map-get($breakpoints, med), max-width) {
+        display: none;
+        width: 100%;
+        float: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: $gray-0;
+        &.in {
+          display: block;
+        }
+        li {
+          display: block;
+          float: none;
+        }
+        a {
+          padding: $rh-xxs $rh-sml;
+          background: none;
+          &.active,
+          &:hover {
+            background: none;
+            color: $color-primary;
+          }
+          @include breakpoint(map-get($breakpoints, sml)) {
+            padding: $rh-xxs $rh-xsm;
+          }
+        }
       }
     }
     &--language {
       a {
         @include link-variant($gray-100, $black);
         &.active {
-          color: $blue-50;
+          color: $color-primary;
         }
       }
     }
-  }
-  .form + .flyout__link {
-    margin-left: $rh-sml;
   }
   .dropdown__menu {
     padding: $rh-xsm 0;
   }
 }
 .navbar--global {
-  background: $blue-75;
+  background: $color-secondary;
   color: $white;
   @include fsRem(map-get($font-sizes, sml));
+  border-bottom: $rh-med solid $gray-0;
   & + & {
-    border-top: 4px solid shade($blue-75);
+    border-top: 2px solid rgba($color-tertiary, .1);
+    border-bottom: 0;
+    padding: $rh-sml 0 0;
+  }
+  &.next-sibling-is-visible {
+    border-bottom: 0;
+  }
+  footer & {
+    border-bottom: 0;
   }
   a:not(.btn) {
     @include link-variant($white);
   }
   .list--unordered {
-    li + li {
-      margin-top: $rh-xxs;
+    li {
+      &:before {
+        color: $white;
+      }
+      & + li {
+        margin-top: $rh-xxs;
+      }
     }
   }
-  .nav {
-    &--main {
-      a {
-        @include link-variant($white, $gray-25);
-      }
-    }
-    &--inline {
-      margin-top: 16px;
-      li + li {
-        border-left: 0;
-        margin-left: $rh-med;
-        padding: 0;
-      }
-      .dropdown__menu {
-        li + li {
-          margin: 0;
-        }
-      }
-    }
-    &--user {
-      margin-top: 10px;
-      .dropdown-toggle {
-        display: inline-block;
-        // padding: 14px $rh-xxs 10px;
-        padding: 4px 0 0;
-        border-bottom: 4px solid transparent;
-      }
-      // .open {
-      //   .dropdown-toggle {
-      //     border-bottom-color: $blue-50;
-      //     background-color: $white;
-      //     color: $blue-75;
-      //   }
-      // }
-    }
-  }
-  a.flyout__link {
-    margin-top: $rh-xsm;
-    text-decoration: none;
-  }
-
   .grid {
     padding: $rh-sml 0;
     & + .grid {
@@ -113,25 +114,34 @@
       @include link-variant($color-text);
     }
   }
+  @include breakpoint(map-get($breakpoints, med), max-width) {
+    & + &,
+    .nav--user,
+    .form--search,
+    .navbar--link {
+      display: none;
+    }
+  }
 }
 .navbar--local {
-  @include transitions(border);
+  @include transitions((border));
   padding-top: $rh-xsm;
   padding-bottom: 0;
   background: $gray-0;
-  z-index: $zindex-layer-1;
+  z-index: $zindex-layer-2;
   .is-sticky & {
+    // padding-top: $rh-xsm;
     border-bottom: 1px solid $gray-25;
   }
   @include fsRem(map-get($font-sizes, sml));
-  a {
-    @include link-variant($blue-50);
-  }
+  // a {
+  //   @include link-variant($color-primary);
+  // }
   .list--unordered {
     margin-top: $rh-xsm;
     li {
       &:before {
-        color: $blue-50;
+        color: $color-primary;
       }
       & + li {
         margin-top: $rh-xxs;
@@ -147,7 +157,7 @@
   }
   .inline--share {
     a {
-      @include link-variant($blue-50, $blue-75);
+      @include link-variant($color-primary, $color-secondary);
     }
   }
 }
@@ -162,7 +172,7 @@
 .navbar--sedes {
   background-image: url(../img/sedes-kuleuven.png);
   background-repeat: no-repeat;
-  background-position: -30% top;
+  background-position: -30% 5%;
 }
 .navbar--small {
   .nav {
@@ -206,41 +216,14 @@
       }
     }
   }
+  & + .navbar__form {
+    margin-left: $rh-sml;
+  }
 }
 
 .navbar__form {
-  margin-bottom: 0;
-  padding: 9px 0;
-  width: 300px;
-  color: $color-text;
-  .form__text {
-    padding: 5px 10px;
-  }
-  .btn {
-    @include fsRem(18px);
-    padding: 2px 8px 0;
-  }
-  .navbar--global & {
-    .form__text {
-      border-radius: $border-radius-sml 0 0 $border-radius-sml;
-      border: none;
-      &:focus {
-        ~ .btn {
-          color: $white;
-          background: $blue-50;
-          border-color: $blue-50;
-        }
-      }
-    }
-    .btn {
-      @include button-variant($gray-50, $white);
-      margin-left: 0;
-      border: 1px solid $gray-0;
-      border-width: 0 0 0 1px;
-      border-radius: 0 $border-radius-sml $border-radius-sml 0;
-    }
-  }
-  @include breakpoint(map-get($breakpoints, med)) {
+  width: 250px;
+  @include breakpoint(map-get($breakpoints, lrg)) {
     width: 350px;
   }
 }
@@ -250,7 +233,7 @@
   letter-spacing: $letter-spacing-sml;
   text-transform: uppercase;
   .navbar--local & {
-    color: $blue-50;
+    color: $color-secondary;
   }
   &--no-margin {
     margin-bottom: 0;
@@ -267,33 +250,81 @@
   float: right;
 }
 
-.navbar__logo {
+
+%ext-navbar-line {
+  position: absolute;
   display: inline-block;
-  background: transparent url(../img/svg/logo.svg) no-repeat center center;
-  width: 157px;
-  height: 56px;
-  margin-right: $rh-med;
-  .no-svg & {
-    background-image: url(../img/logo.png);
-  }
-  .navbar--global & {
-    background-image: url(../img/svg/logo-simple.svg);
-    width: 130px;
-    height: 30px;
-    margin-top: 9px;
-    margin-right: $rh-sml;
-    &--footer {
-      margin-top: 12px;
-      margin-right: $rh-med;
+  width: 14px;
+  height: 2px;
+  background: $color-text;
+  border-radius: 1px;
+  transition: all 200ms;
+}
+
+.navbar__toggle {
+  @include link-variant($color-text);
+  @include fsRem(map-get($font-sizes, sml));
+  position: relative;
+  display: inline-block;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  .lines {
+    @extend %ext-navbar-line;
+    top: 20px;
+    right: 0;
+    &:before {
+      @extend %ext-navbar-line;
+      content: '';
+      top: -4px;
+      transform-origin: 50% 50%;
     }
-    & + .nav--user {
-      border-left: 1px solid rgba($blue-50, .3);
-      padding-left: $rh-sml;
+    &:after {
+      @extend %ext-navbar-line;
+      content: '';
+      top: 4px;
+      transform-origin: 50% 50%;
     }
   }
-  .navbar--footer & {
-    width: 107px;
-    height: 38px;
-    background-size: 100%;
+  &.is-open {
+    .lines {
+      background: transparent;
+      &:before {
+        top: 0px;
+        transform: rotate3d(0, 0, 1, 45deg);
+      }
+      &:after {
+        top: 0px;
+        transform: rotate3d(0, 0, 1, -45deg);
+      }
+    }
+  }
+
+  &--btn {
+    @include fsRem(map-get($font-sizes, med));
+    padding: 6px 40px 8px 20px;
+    font-weight: $font-weight-bold;
+    .lines {
+      right: 16px;
+      top: 18px;
+      height: 2px;
+      &:before,
+      &:after {
+        height: 2px;
+      }
+    }
+  }
+  &--dark {
+    @include link-variant($white);
+    background: rgba($color-tertiary, .3);
+    .lines {
+      background: $white;
+      &:before,
+      &:after {
+        background: $white;
+      }
+    }
   }
 }

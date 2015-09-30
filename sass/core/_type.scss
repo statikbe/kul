@@ -43,6 +43,12 @@
   &--spaced {
     letter-spacing: $letter-spacing-sml;
   }
+  &--colored {
+    span,
+    div {
+      color: $color-primary;
+    }
+  }
 }
 .heading--1,
 h1 {
@@ -111,6 +117,11 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+.text--label {
+  @include fsRem(map-get($font-sizes, sml));
+  color: $gray-75;
+  text-transform: uppercase;
+}
 .text--info {
   color: $gray-75;
 }
@@ -123,7 +134,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .text--primary {
-  color: $color-brand-primary;
+  color: $color-primary;
 }
 
 // Alignment

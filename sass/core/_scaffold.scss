@@ -31,7 +31,7 @@ html {
       top: 0;
       left: -100%;
       z-index: 10;
-      background: $color-brand-primary;
+      background: $color-primary;
     }
   }
   &.wf-active,
@@ -63,10 +63,11 @@ html {
 // Body
 //
 body {
+  @include generate-fontsizes(map-get($font-size, base));
   background-color: $color-background;
   color: $color-text;
   font-family: $font-family-base;
-  @include fsRem($font-size-base);
+  // @include fsRem($font-size-base);
   font-weight: $font-weight-base;
   line-height: lh($line-height-base);
   @if $breakpoints-legacy {
@@ -185,6 +186,25 @@ iframe {
     }
   }
 }
+
+
+// .show--bp-med
+@each $bp, $px in $breakpoints {
+  @include breakpoint($px, max-width) {
+    .show--bp-#{$bp} {
+      display: none !important;
+    }
+  }
+}
+// .hidden--bp-med
+@each $bp, $px in $breakpoints {
+  @include breakpoint($px, min-width) {
+    .hidden--bp-#{$bp} {
+      display: none !important;
+    }
+  }
+}
+
 
 i.material-icons {
   font-size: inherit;

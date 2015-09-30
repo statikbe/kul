@@ -2,7 +2,7 @@
   padding: $rh-sml;
   @include breakpoint(map-get($breakpoints, lrg)){
     padding: $rh-med;
-  };
+  }
 }
 %status-block {
   @extend %panel-block;
@@ -33,10 +33,13 @@
       padding: $rh-med;
     };
   }
-
+  &--white {
+    @extend %panel-block;
+    background: $white;
+  }
   &--bg,
   &--gray {
-    padding: $rh-sml;
+    @extend %panel-block;
     background: $gray-0;
   }
 
@@ -49,11 +52,15 @@
 
   &--primary {
     @extend %status-block;
-    background: $color-brand-primary;
+    background: $color-primary;
   }
   &--secondary {
     @extend %status-block;
-    background: $color-brand-secondary;
+    background: $color-secondary;
+  }
+  &--tertiary {
+    @extend %status-block;
+    background: $color-tertiary;
   }
 
   @each $type, $color in $notice-colors {

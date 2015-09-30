@@ -1,7 +1,16 @@
 .panel {
   border: 1px solid $gray-25;
+  background: $white;
+  position: relative;
+  & + & {
+    margin-top: $rh-sml;
+  }
   &--bg {
     background: tint($gray-0, 50%);
+    .panel__header,
+    .panel__footer {
+      background: $white;
+    }
   }
   &--glue {
     & + & {
@@ -14,15 +23,42 @@
       }
     }
   }
-  &__header {
-    padding: $rh-sml;
-    border-bottom: 1px solid $gray-25;
-  }
+
   &__body {
     padding: $rh-sml;
+    .panel__header + & {
+      border-top: 1px solid $gray-25;
+    }
+    .panel__icon + & {
+      padding-left: $rh-xlr;
+    }
   }
+  &__header,
   &__footer {
     padding: $rh-sml;
+    background: tint($gray-0, 50%);
+  }
+  &__header {
+    font-weight: $font-weight-semibold;
+  }
+  &__footer {
     border-top: 1px solid $gray-25;
   }
+  &__icon {
+
+  }
+}
+
+
+.panel__icon {
+  position: absolute;
+  top: $rh-sml;
+  left: $rh-xsm;
+  padding: 5px;
+  width: 1.5em;
+  height: 1.5em;
+  background: $white;
+  border-radius: 50%;
+  color: $color-primary;
+  fill: $color-primary;
 }
