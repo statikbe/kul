@@ -19,5 +19,6 @@
   &--floating {
     position: absolute;
     top: 14px;
+    z-index: $zindex-layer-2;
   }
 }

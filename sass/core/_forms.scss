@@ -90,15 +90,17 @@ form {
     margin-bottom: 0;
     .form__text {
       flex: 1 1 150px;
+      padding: 10px 18px 11px;
     }
     .btn {
+      @include fsRem(22px);
       margin-left: $rh-xsm;
+      padding: 0 12px 0;
     }
   }
   &--dark {
     color: $color-text;
     .form__text {
-      padding: 10px 18px 11px;
       background: rgba($white, .1);
       color: $white;
       border-radius: 0;
@@ -121,7 +123,6 @@ form {
     }
     .btn {
       @include button-variant($white, $color-primary);
-      @include fsRem(22px);
       padding: 0 8px 0;
       margin-left: 0;
       border-width: 0;

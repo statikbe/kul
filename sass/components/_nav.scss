@@ -43,7 +43,7 @@
     a {
       @include link-variant($gray-75, $blue-75);
       display: block;
-      padding: 13px 0;
+      padding: 8px 0;
       text-decoration: none;
     }
     li + li {
@@ -53,12 +53,14 @@
 
   &--service {
     @extend %ext-default-nav;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin: 16px 0;
     li + li {
       border-left: 0;
       margin-left: $rh-med;
       padding: 0;
+    }
+    a {
+      text-decoration: none;
     }
     .dropdown__menu {
       li + li {
@@ -68,6 +70,9 @@
     @include breakpoint(map-get($breakpoints, lrg), max-width) {
       clear: left;
       margin-top: 0;
+    }
+    &--small {
+      margin: 9px 0;
     }
   }
 
@@ -103,13 +108,14 @@
   } // end .-language
 
   &--user {
+    margin: 9px 0;
     a {
       text-decoration: none;
     }
     .dropdown-toggle {
       display: inline-block;
-      padding: 9px 0 5px;
-      border-bottom: 4px solid transparent;
+      // padding: 9px 0 5px;
+      // border-bottom: 4px solid transparent;
     }
   }
 
