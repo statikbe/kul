@@ -82,14 +82,14 @@
   & + & {
     border-top: 2px solid rgba($color-tertiary, .1);
     border-bottom: 0;
-    padding: $rh-sml 0 0;
+    padding: $rh-med 0 0;
   }
   &.next-sibling-is-visible {
     border-bottom: 0;
   }
-  footer & {
-    border-bottom: 0;
-  }
+  // footer & {
+  //   border-bottom: 0;
+  // }
   a:not(.btn) {
     @include link-variant($white);
   }
