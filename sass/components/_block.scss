@@ -23,6 +23,11 @@
     margin-top: $rh-sml;
   }
 
+  &__title {
+    font-weight: $font-weight-regular;
+    text-transform: none;
+  }
+
   &--panel,
   &--indented {
     @extend %panel-block;
@@ -61,6 +66,11 @@
   &--tertiary {
     @extend %status-block;
     background: $color-tertiary;
+  }
+  &--contact {
+    @extend %status-block;
+    background: $color-contact;
+    color: inherit;
   }
 
   @each $type, $color in $notice-colors {
