@@ -65,8 +65,9 @@
   &--secondary {
     position: relative;
     display: inline-block;
-    background-color: $blue-75;
-    background: $blue-75;
+    background-color: darken($blue-50,20%);
+    background: darken($blue-50,20%);
+    border-color: darken($blue-50,25%);
     &:after {
       content: "\E315";
       display: inline-block;
