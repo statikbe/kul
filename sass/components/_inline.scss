@@ -36,3 +36,9 @@
     }
   }
 }
+
+.inline--divider {
+  .inline__item + .inline__item {
+    border-left: 1px solid;
+  }
+}
