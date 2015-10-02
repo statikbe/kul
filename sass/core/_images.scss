@@ -31,11 +31,13 @@ svg {
     float: right;
     margin-left: $rh-sml;
     margin-bottom: $rh-xsm;
+    width: 30%;
   }
   &--left {
     float: left;
     margin-right: $rh-sml;
     margin-bottom: $rh-xsm;
+    width: 30%;
   }
   &--round {
     border-radius: 50%;
