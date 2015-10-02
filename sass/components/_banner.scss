@@ -9,16 +9,24 @@
     font-style: italic;
     line-height: $line-height-sml;
   }
-
+  .container {
+    position: relative;
+  }
   //
   // Modifications
   //
   &--image {
+    position: relative;
     color: $white;
     background-position: 50% 50%;
     background-size: cover;
+    &:before {
+      @include absolute-fill;
+      content: '';
+      background-image: linear-gradient(to top, rgba($black, .3), transparent);
+    }
     a:not(.btn) {
-      @include link-variant($white);
+      @include link-variant(inherit);
     }
   }
 }

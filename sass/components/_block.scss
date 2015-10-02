@@ -72,6 +72,14 @@
     background: $color-contact;
     color: inherit;
   }
+  &--banner {
+    @extend %status-block;
+    background: rgba($white,.95);
+    color: $color-text;
+    a:not(.btn) {
+      @include link-variant($color-link);
+    }
+  }
 
   @each $type, $color in $notice-colors {
     &--#{$type} {
