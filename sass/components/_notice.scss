@@ -1,9 +1,10 @@
 .notice {
   // border: 1px solid;
+  position: relative;
+  margin-bottom: $line-height-base;
   padding: $rh-sml;
   padding-right: $rh-med;
-  margin-bottom: $line-height-base;
-  position: relative;
+  background: hsl(hue($color-text), saturation($color-text), 95%);
 
   @each $type, $color in $notice-colors {
     &--#{$type} {
