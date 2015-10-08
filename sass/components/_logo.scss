@@ -1,12 +1,12 @@
 .logo {
   display: inline-block;
-  background: transparent url(http://stijl.kuleuven.be/2016tmp/public/img/svg/logo.svg) no-repeat center center;
+  background: transparent url(http://stijl.kuleuven.be/2016tmp/img/svg/logo.svg) no-repeat center center;
   background-size: 100% 100%;
   width: 157px;
   height: 56px;
   margin-right: $rh-med;
   .no-svg & {
-    background-image: url(http://stijl.kuleuven.be/2016tmp/public/img/logo.png);
+    background-image: url(http://stijl.kuleuven.be/2016tmp/img/logo.png);
   }
   &--xsm {
     width: 107px;
