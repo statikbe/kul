@@ -6,8 +6,8 @@
     display: inline-block;
     vertical-align: middle;
     margin-bottom: $spacing;
-    margin-right: $spacing;
-    margin-left: $spacing;
+    padding-right: $spacing;
+    padding-left: $spacing;
   }
   img {
     vertical-align: middle;
@@ -34,5 +34,11 @@
     .inline__item:first-child {
       margin-right: $rh-xsm;
     }
+  }
+}
+
+.inline--divider {
+  .inline__item + .inline__item {
+    border-left: 1px solid;
   }
 }

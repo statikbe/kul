@@ -26,16 +26,19 @@ svg {
   &--full-width {
     width: 100%;
     height: auto;
+    margin-bottom: $rh-sml;
   }
   &--right {
     float: right;
     margin-left: $rh-sml;
     margin-bottom: $rh-xsm;
+    width: 30%;
   }
   &--left {
     float: left;
     margin-right: $rh-sml;
     margin-bottom: $rh-xsm;
+    width: 30%;
   }
   &--round {
     border-radius: 50%;

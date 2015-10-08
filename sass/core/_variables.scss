@@ -16,15 +16,18 @@ $petrol-50: #1d8db0;
 
 $green-50: #25b8a9;
 
+$yellow-50: #ffc857;
+
 // Brand colors
 $color-primary: $blue-50 !default;
 $color-secondary: $petrol-50 !default;
 $color-tertiary: $blue-75 !default;
+$color-contact: $yellow-50;
 
 $notice-colors: (
   success: #3ebd92,
   info: #1d8db0,
-  warning: #eeb42f,
+  warning: #dc9a04,
   danger: #e03f47
 );
 
