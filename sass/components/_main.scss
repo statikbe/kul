@@ -1,10 +1,12 @@
 .page-wrap {
-  @include transitions((transform));
-  z-index: 0;
-  &.collapse {
-    display: block;
-  }
-  &.in {
-    transform: translateX(-240px);
+  @include breakpoint($breakpoints-flyout, max-width) {
+    @include transitions((transform));
+    z-index: 0;
+    &.collapse {
+      display: block;
+    }
+    &.in {
+      transform: translateX(-240px);
+    }
   }
 }
