@@ -18,6 +18,7 @@
   &--image {
     position: relative;
     color: $white;
+    background-color: $gray-0;
     background-position: 50% 50%;
     background-size: cover;
     &:before {
@@ -27,6 +28,9 @@
     }
     a:not(.btn) {
       @include link-variant(inherit);
+    }
+    @include breakpoint(map-get($breakpoints, sml), max-width) {
+      background-image: none !important;
     }
   }
 }
