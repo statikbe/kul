@@ -1,24 +1,27 @@
 .breadcrumb {
   clear: both;
-  margin: 0 0 $rh-med;
+  margin: 0 0 $rh-sml;
   color: $color-text;
-  @include fsRem(13px);
+  font-size: 0;
   text-decoration: none;
-  a {
-    display: inline-block;
-    &.active {
-      color: $color-text;
-    }
-    &:hover,
-    &:focus {
-      text-decoration: underline;
+  &__scope {
+    @include fsRem(map-get($font-sizes, sml));
+    & + & {
+      &:before {
+        content: "›";
+        // font-family: $font-family-icons;
+        margin: 0 $rh-xxs;
+      }
     }
   }
-  // &__divider {
-  //   vertical-align: bottom;
-  //   display: inline-block;
-  //   color: $gray-75;
-  //   @include fsRem(16px);
-  //   font-family: $font-family-icons;
-  // }
+  &__item {
+    display: inline-block;
+    &:hover {
+      text-decoration: none;
+    }
+    &--active {
+      @include link-variant($color-text);
+      text-decoration: none;
+    }
+  }
 }
