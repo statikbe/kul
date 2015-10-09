@@ -164,7 +164,13 @@ iframe {
 }
 .print-only,
 .print-only-inline {
-    display: none;
+  display: none;
+}
+.screen-only {
+  display: block;
+}
+.screen-only-inline {
+  display: inline;
 }
 .pull--left {
   float: left;
