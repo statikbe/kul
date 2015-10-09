@@ -18,5 +18,5 @@ $font-path: '//stijl.kuleuven.be/2016tmp/fonts/';
 @include font-variant('Open Sans', normal, $font-weight-semibold, (local('Open Sans'), local('OpenSans')), 'OpenSans-Semibold');
 @include font-variant('Open Sans', normal, $font-weight-bold, (local('Open Sans'), local('OpenSans')), 'OpenSans-Bold');
 @include font-variant('Open Sans', italic, $font-weight-regular, (local('Open Sans'), local('OpenSans')), 'OpenSans-Italic');
-@include font-variant('Open Sans', italic, $font-weight-semibold, (local('Open Sans'), local('OpenSans')), 'OpenSans-Semibolditalic');
+@include font-variant('Open Sans', italic, $font-weight-semibold, (local('Open Sans'), local('OpenSans')), 'OpenSans-SemiboldItalic');
 @include font-variant('Open Sans', italic, $font-weight-bold, (local('Open Sans'), local('OpenSans')), 'OpenSans-BoldItalic');
