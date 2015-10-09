@@ -27,8 +27,8 @@ app.main = (function($, undefined) {
     }
 
     // Fire the finalize function for common
-    this.fire('kul','finalize');
     this.fire('common','finalize');
+    this.fire('kul','finalize');
   };
 
   return {
