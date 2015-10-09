@@ -1,5 +1,6 @@
 .pagination {
   @include listreset;
+  @include fsRem(map-get($font-sizes, med));
   // clear: both;
   margin: $rh-sml 0 0;
   text-align: center;
@@ -10,16 +11,27 @@
   a {
     display: inline-block;
     text-decoration: none;
+    &.disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
   }
   &__btn {
+    @include link-variant($blue-75, $white);
     display: inline-block;
-    background: $gray-25;
-    padding: 0 $rh-xxs;
+    width: 30px;
+    padding: 5px 0;
+    background: $gray-0;
+    color: $blue-75;
+    text-align: center;
     &.active,
-    &:hover {
-      background: $gray-50;
+    &:hover,
+    &:focus {
+      background: $color-primary;
       color: $white;
     }
   }
+  &__prev-next {
+    font-family: $font-family-icons;
+  }
 }
-
