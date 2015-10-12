@@ -29,6 +29,7 @@
       text-decoration: underline;
       display: inline-block;
       &:hover {
+        color: rgba($white, .75);
         text-decoration: none;
       }
     }
@@ -61,6 +62,9 @@
     }
     a {
       text-decoration: none;
+      &:hover {
+        color: rgba($white, .75);
+      }
     }
     .dropdown__menu {
       li + li {

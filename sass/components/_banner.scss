@@ -29,8 +29,5 @@
     a:not(.btn) {
       @include link-variant(inherit);
     }
-    @include breakpoint(map-get($breakpoints, sml), max-width) {
-      background-image: none !important;
-    }
   }
 }
