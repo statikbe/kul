@@ -10,8 +10,10 @@
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
+  -moz-font-feature-settings: 'liga';
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'liga';
 }
 
 %ext-icon-style {
