@@ -1,0 +1,22 @@
+$font-path: '//stijl.kuleuven.be/2016tmp/fonts/';
+@mixin font-variant($name, $style, $weight, $local, $fileName) {
+  @font-face {
+    font-family: $name;
+    font-style: $style;
+    font-weight: $weight;
+    // src: $local,
+    src:
+         url(#{$font-path}#{$fileName}.woff2) format('woff2'),
+         url(#{$font-path}#{$fileName}.woff) format('woff');
+  }
+}
+
+@include font-variant('Material Icons', normal, $font-weight-regular, (local('Material Icons'), local('MaterialIcons-Regular')), 'MaterialIcons-Regular');
+@include font-variant('Merriweather', normal, $font-weight-regular, (local('Merriweather')), 'Merriweather-Regular-webfont');
+@include font-variant('Merriweather', italic, $font-weight-regular, (local('Merriweather')), 'merriweather-italic-webfont');
+@include font-variant('Open Sans', normal, $font-weight-regular, (local('Open Sans'), local('OpenSans')), 'OpenSans-Regular');
+@include font-variant('Open Sans', normal, $font-weight-semibold, (local('Open Sans'), local('OpenSans')), 'OpenSans-Semibold');
+@include font-variant('Open Sans', normal, $font-weight-bold, (local('Open Sans'), local('OpenSans')), 'OpenSans-Bold');
+@include font-variant('Open Sans', italic, $font-weight-regular, (local('Open Sans'), local('OpenSans')), 'OpenSans-Italic');
+@include font-variant('Open Sans', italic, $font-weight-semibold, (local('Open Sans'), local('OpenSans')), 'OpenSans-SemiboldItalic');
+@include font-variant('Open Sans', italic, $font-weight-bold, (local('Open Sans'), local('OpenSans')), 'OpenSans-BoldItalic');

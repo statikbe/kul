@@ -17,9 +17,9 @@ app.kul = (function($, undefined) {
   };
 
   var _sticky = function() {
-    $("header .navbar--local").removeAttr('style').unstick().sticky({
-      responsiveWidth: true
-    });
+    // $("header .navbar--local").removeAttr('style').unstick().sticky({
+    //   responsiveWidth: true
+    // });
   };
 
   var _windowResize = function() {

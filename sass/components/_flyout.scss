@@ -12,8 +12,10 @@
   border-left: 2px solid rgba($black, .1);
   color: $white;
   z-index: $zindex-layer-2;
-  &.in {
-    transform: translateX(0);
+  @include breakpoint($breakpoints-flyout, max-width) {
+    &.in {
+      transform: translateX(0);
+    }
   }
 
   // .flyout__back,

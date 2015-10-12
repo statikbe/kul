@@ -28,9 +28,11 @@
       // align-items: stretch;
       .media__figure {
         width: 50%;
+        width: calc(50% + (#{$grid-gutter-width} / 2));
       }
       .media__body {
         margin-left: 50%;
+        margin-left: calc(50% + (#{$grid-gutter-width} / 2));
       }
     }
     &--25-75 {

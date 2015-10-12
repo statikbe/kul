@@ -1,7 +1,7 @@
 @mixin grayscale() {
   webkit-filter: grayscale(100%);
   filter: gray; filter: grayscale(100%);
-  filter: url(/img/svg/grayscale.svg#grayscale);
+  filter: url(//stijl.kuleuven.be/2016tmp/img/svg/grayscale.svg#grayscale);
 }
 
 @mixin background-sliding($color, $color-alt: transparent, $position: down) {

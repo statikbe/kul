@@ -23,8 +23,6 @@
       }
     }
     &--tabs {
-      float: left;
-      width: 85%;
       border-bottom: 0;
       a {
         @include link-variant($gray-100, $black);
