@@ -55,7 +55,7 @@ h1 {
   @extend %ext-heading;
   margin-top: 0;
   @include fsRem($font-size-h1);
-  letter-spacing: $letter-spacing-sml;
+  letter-spacing: $letter-spacing-xms;
   text-transform: uppercase;
   span,
   div {
@@ -67,7 +67,7 @@ h1 {
 h2 {
   @extend %ext-heading;
   @include fsRem($font-size-h2);
-  letter-spacing: $letter-spacing-sml;
+  letter-spacing: $letter-spacing-xms;
   text-transform: uppercase;
 }
 .heading--3,
@@ -76,12 +76,14 @@ h3 {
   @include fsRem($font-size-h3);
   // font-weight: $font-weight-regular;
   font-weight: $font-weight-semibold;
+  letter-spacing: $letter-spacing-xms;
 }
 .heading--4,
 h4 {
   @extend %ext-heading;
   @include fsRem($font-size-h4);
   font-weight: $font-weight-semibold;
+  letter-spacing: $letter-spacing-xms;
 }
 .heading--5,
 h5 {
@@ -89,6 +91,7 @@ h5 {
   @include fsRem($font-size-h5);
   font-weight: $font-weight-semibold;
   margin-bottom: $rh-xxs;
+  letter-spacing: $letter-spacing-xms;
 }
 .heading--6,
 h5 {
@@ -97,6 +100,7 @@ h5 {
   font-weight: $font-weight-semibold;
   margin-bottom: $rh-xxs;
   color: $gray-75;
+  letter-spacing: $letter-spacing-xms;
 }
 
 h1, h2, h3, h4, h5 {
