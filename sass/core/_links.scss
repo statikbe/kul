@@ -7,6 +7,7 @@
       display: inline-block;
       margin-left: 2px;
       vertical-align: middle;
+      text-decoration: underline;
       font-family: $font-family-icons;
     }
   }
@@ -24,4 +25,8 @@
   &--no-underline {
     text-decoration: none;
   }
+}
+
+a:after {
+  text-decoration: none !important;
 }
