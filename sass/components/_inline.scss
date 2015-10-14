@@ -38,7 +38,11 @@
 }
 
 .inline--divider {
-  .inline__item + .inline__item {
-    border-left: 1px solid;
+  .inline__item {
+    border-right: 1px solid;
+
+    &:last-child {
+      border-right:0;
+    }
   }
 }
