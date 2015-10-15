@@ -43,6 +43,10 @@
       flex-direction: column;
       align-content: stretch;
     }
+    &:before,
+    &:after {
+      display: none;
+    }
   }
 }
 .grid__item {

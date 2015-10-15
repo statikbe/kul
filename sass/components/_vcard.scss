@@ -5,13 +5,14 @@
 }
 
 .vcard__item {
+  @include cf;
   & + & {
     margin-top: $rh-xsm;
   }
 }
 .vcard__icon {
   width: 20px;
-  height: auto;
+  height: 20px;
   float: left;
   margin-top: 2px;
   & + * {
