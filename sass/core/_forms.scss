@@ -62,6 +62,7 @@ form {
   .grid {
     display: flex;
     align-items: flex-end;
+    flex-wrap: wrap;
     + .grid {
       margin-top: $rh-sml;
     }
