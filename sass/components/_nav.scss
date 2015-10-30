@@ -29,6 +29,7 @@
       text-decoration: underline;
       display: inline-block;
       &:hover {
+        color: rgba($white, .75);
         text-decoration: none;
       }
     }
@@ -61,6 +62,9 @@
     }
     a {
       text-decoration: none;
+      &:hover {
+        color: rgba($white, .75);
+      }
     }
     .dropdown__menu {
       li + li {
@@ -78,11 +82,12 @@
 
   &--tabs {
     @extend .tabbable;
-    .nav__item--home {
-      margin-right: 0;
-    }
+    // .nav__item--home {
+    //   margin-right: 0;
+    // }
     li a {
       padding: $rh-xsm 0;
+      font-weight:$font-weight-semibold;
     }
   } // end .nav--tabs
 

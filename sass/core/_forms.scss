@@ -14,7 +14,7 @@
 %ext-input-style {
   @include transitions((color, background, border));
   width: 100%;
-  padding: 14px 15px;
+  padding: 10px 16px;
   border: 1px solid $gray-25;
   background-color: $white;
   color: $color-text;
@@ -62,12 +62,16 @@ form {
   .grid {
     display: flex;
     align-items: flex-end;
+    flex-wrap: wrap;
     + .grid {
       margin-top: $rh-sml;
     }
     &--center {
       align-items: center;
     }
+  }
+  .btn {
+    padding: 10px 16px;
   }
 }
 
@@ -190,7 +194,7 @@ form {
     left: auto;
   }
   .form__select {
-    width: calc(100% + 15px);
+    width: calc(100% + 50px);
     position: relative;
     z-index: $zindex-layer-1;
   }

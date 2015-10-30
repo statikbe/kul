@@ -4,9 +4,11 @@
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
   color: $headings-color;
-
   margin-top: $line-height-base;
   margin-bottom: ($line-height-base * .5);
+  @include breakpoint(map-get($breakpoints, sml)) {
+    letter-spacing: $letter-spacing-xms;
+  }
   a {
     @include link-variant(inherit, $blue-50);
     text-decoration: none;
@@ -53,9 +55,9 @@
 .heading--1,
 h1 {
   @extend %ext-heading;
+  @include generate-fontsizes(map-get($font-size, h1));
+  // @include fsRem($font-size-h1);
   margin-top: 0;
-  @include fsRem($font-size-h1);
-  letter-spacing: $letter-spacing-sml;
   text-transform: uppercase;
   span,
   div {
@@ -66,32 +68,35 @@ h1 {
 .heading--2,
 h2 {
   @extend %ext-heading;
-  @include fsRem($font-size-h2);
-  letter-spacing: $letter-spacing-sml;
+  @include generate-fontsizes(map-get($font-size, h2));
+  // @include fsRem($font-size-h2);
   text-transform: uppercase;
 }
 .heading--3,
 h3 {
   @extend %ext-heading;
-  @include fsRem($font-size-h3);
+  @include generate-fontsizes(map-get($font-size, h3));
+  // @include fsRem($font-size-h3);
   // font-weight: $font-weight-regular;
   font-weight: $font-weight-semibold;
 }
 .heading--4,
 h4 {
   @extend %ext-heading;
-  @include fsRem($font-size-h4);
+  @include generate-fontsizes(map-get($font-size, h4));
+  // @include fsRem($font-size-h4);
   font-weight: $font-weight-semibold;
 }
 .heading--5,
 h5 {
   @extend %ext-heading;
-  @include fsRem($font-size-h5);
+  @include generate-fontsizes(map-get($font-size, h5));
+  // @include fsRem($font-size-h5);
   font-weight: $font-weight-semibold;
   margin-bottom: $rh-xxs;
 }
 .heading--6,
-h5 {
+h6 {
   @extend %ext-heading;
   @include fsRem($font-size-h6);
   font-weight: $font-weight-semibold;

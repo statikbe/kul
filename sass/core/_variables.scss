@@ -52,8 +52,8 @@ $font-family-base: $font-family-sans !default;
 
 $font-size-root: 16px !default;
 $font-sizes: (
-  xxl: 38px,
-  xlr: 24px,
+  xxl: 32px,
+  xlr: 20px,
   lrg: 18px,
   med: 16px,
   sml: 14px,
@@ -66,9 +66,25 @@ $font-size: (
     med: 16px
   ),
   h1: (
-    reg: 28px,
-    med: 32px,
-    xlr: 38px
+    reg: 26px,
+    med: 30px,
+    xlr: 32px
+  ),
+  h2: (
+    reg: 18px,
+    med: 20px
+  ),
+  h3: (
+    reg: 18px,
+    xlr: 20px
+  ),
+  h4: (
+    reg: 16px,
+    med: 18px
+  ),
+  h5: (
+    reg: 14px,
+    med: 16px
   )
 );
 
@@ -77,7 +93,7 @@ $font-size-base: map-get($font-sizes, med) !default;
 
 $font-size-h1: map-get($font-sizes, xxl) !default;
 $font-size-h2: map-get($font-sizes, xlr) !default;
-$font-size-h3: 21px !default;
+$font-size-h3: 20px !default;
 $font-size-h4: 18px !default;
 $font-size-h5: 18px !default;
 $font-size-h6: 16px !default;
