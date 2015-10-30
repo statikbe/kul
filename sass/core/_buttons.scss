@@ -1,7 +1,7 @@
 %ext-button-style {
   @include transitions((background, border));
   display: inline-block;
-  padding: 10px 16px;
+  padding: .625em 1em;
   border-style: solid;
   border-width: 0 2px 2px 0;
   border-radius: $border-radius-med;
@@ -68,11 +68,12 @@
 
   &--large {
     @include fsRem(map-get($font-sizes, lrg));
-    padding: 10px 15px;
+
   }
 
   &--small {
-    padding: 2px 10px;
+    @include fsRem(map-get($font-sizes, xsm));
+    text-transform: initial;
   }
 
   &--block {
