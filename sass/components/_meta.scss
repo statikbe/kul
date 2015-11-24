@@ -2,6 +2,10 @@
   // margin-top: $rh-xxs;
   color: $blue-50;
   line-height: 1.2;
+  margin-bottom: -$rh-xxs;
+  > * {
+    margin-top: $rh-xxs;
+  }
   &--grayed-out {
     color: $gray-50;
   }
