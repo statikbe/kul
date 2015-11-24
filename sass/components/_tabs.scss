@@ -9,7 +9,7 @@
 .tabbable {
   border-bottom: 1px solid $gray-25;
   ul {
-    margin: 0 -#{$rh-sml};
+    margin: 0 (0 - $rh-sml);
     padding: 0;
   }
   li {
