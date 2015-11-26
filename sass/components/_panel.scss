@@ -49,6 +49,13 @@
   }
 }
 
+.accordion--title {
+  @include link-variant($gray-100, $gray-100);
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+}
 
 .panel__icon {
   position: absolute;
