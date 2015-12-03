@@ -1,5 +1,5 @@
 .banner {
-  padding: 90px 0;
+  padding: 90px 10px;
   h2 {
     @include fsRem(map-get($font-sizes, xxl));
   }

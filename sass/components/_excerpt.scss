@@ -64,7 +64,6 @@
   @include breakpoint(map-get($breakpoints, sml)){
     float: left;
     width: 150px;
-    margin-right: 20px;
   };
   @include breakpoint(map-get($breakpoints, sml), 'max-width'){
     margin-bottom: $rh-med;
@@ -77,7 +76,6 @@
   .excerpt--hz-large & {
     @include breakpoint(map-get($breakpoints, sml)){
       width: 150px;
-      margin-right: 20px;
     };
     @include breakpoint(map-get($breakpoints, sml)){
       width: 210px;

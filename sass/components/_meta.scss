@@ -1,10 +1,16 @@
 .meta {
   // margin-top: $rh-xxs;
+  margin-right: -$rh-xsm;
+  margin-bottom: -$rh-xsm;
+  margin-left: -$rh-xsm;
   color: $blue-50;
   line-height: 1.2;
-  margin-bottom: -$rh-xxs;
+  font-size: 0;
   > * {
-    margin-top: $rh-xxs;
+    @include fsRem(map-get($font-sizes, med));
+    margin-bottom: $rh-xsm;
+    padding-right: $rh-xsm;
+    padding-left: $rh-xsm;
   }
   &--grayed-out {
     color: $gray-50;
@@ -12,18 +18,18 @@
   &__item {
     position: relative;
     display: inline-block;
-    padding-right: $rh-sml;
     &:after {
       content: '';
       height: .9em;
-      position: relative;
-      left: (($rh-sml / 2) + 2);
+      position: absolute;
       top: 0.1em;
+      right: 0;
+      // left: (($rh-sml / 2) + 2);
       display: inline-block;
       border-left: 1px solid $gray-50;
     }
     &:last-child {
-      padding-right: 0;
+      // padding-right: 0;
       &:after {
         display: none;
       }
@@ -32,16 +38,22 @@
       margin-right: 5px;
     }
     &--lrg {
-      @include fsRem(map-get($font-sizes, lrg));
+      > * {
+        @include fsRem(map-get($font-sizes, lrg));
+      }
     }
   }
 
   &--detail {
     margin-bottom: $rh-xsm;
     color: $color-text;
-    @include fsRem(map-get($font-sizes, lrg));
+    > * {
+      @include fsRem(map-get($font-sizes, lrg));
+    }
     &--lrg {
-      @include fsRem(map-get($font-sizes, xlr));
+      > * {
+        @include fsRem(map-get($font-sizes, xlr));
+      }
     }
   }
 
