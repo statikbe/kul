@@ -47,7 +47,14 @@
     @extend %panel-block;
     background: $gray-0;
   }
-
+  &--bg-darken {
+    @extend %panel-block;
+    background: $gray-25;
+  }
+  &--bg-lighten {
+    @extend %panel-block;
+    background: $gray-0;
+  }
   &--border {
     & + & {
       border-top: 1px solid $gray-25;
