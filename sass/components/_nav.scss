@@ -95,8 +95,8 @@
     float: right;
     text-transform: uppercase;
     border-left: 1px solid $gray-25;
-    margin-left: $rh-sml;
-    padding-left: $rh-sml;
+    margin-left: ($rh-sml - 4);
+    padding-left: ($rh-sml - 4);
     li {
       float: none;
       margin-bottom: 5px;
@@ -113,8 +113,20 @@
   } // end .-language
 
   &--user {
-    margin: 9px 0;
+    margin-top: 10px;
+    float: left;
+    @include breakpoint(800px) {
+      margin-top: -53px;
+      float: none;
+    }
+    .nav--user-name {
+      display: none;
+      @include breakpoint(800px) {
+        display: inline-block;
+      }
+    }
     a {
+      text-align: right;
       text-decoration: none;
     }
     .dropdown-toggle {
@@ -142,4 +154,11 @@
       @include link-variant($white, $gray-25);
     }
   }
+}
+
+.navbar--global.collapse.in + .navbar .nav--user {
+  margin-top: -35px;
+}
+.navbar--global.collapse.in + .navbar--local .navbar__title {
+  margin-bottom: 12px;
 }

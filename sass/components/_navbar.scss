@@ -233,6 +233,10 @@
   text-transform: uppercase;
   .navbar--local & {
     color: $color-secondary;
+    width: 100%;
+    @include breakpoint(800px) {
+      width: 65%;
+    }
   }
   &--no-margin {
     margin-bottom: 0;

@@ -47,13 +47,13 @@
     @extend %panel-block;
     background: $gray-0;
   }
-  &--bg-darken {
+  &--bg-dark {
     @extend %panel-block;
     background: $gray-25;
   }
-  &--bg-lighten {
+  &--bg-light {
     @extend %panel-block;
-    background: $gray-0;
+    background: $gray;
   }
   &--border {
     & + & {
