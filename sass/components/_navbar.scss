@@ -239,12 +239,12 @@
 
 .navbar__form-2 {
   @include breakpoint(map-get($breakpoints, med)) {
-    width: 250px;
+    width: 235px;
   }
   @include breakpoint(map-get($breakpoints, lrg)) {
-    width: 250px;
+    width: 220px;
   }
-  @include breakpoint(1060px) {
+  @include breakpoint(1120px) {
     width: 350px;
   }
 }
