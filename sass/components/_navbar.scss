@@ -69,7 +69,18 @@
     }
   }
   .dropdown__menu {
-    padding: $rh-xsm 0;
+    // padding: $rh-xsm 0;
+  }
+}
+.navbar-2 {
+  @include clearfix();
+  padding: 0;
+  position: relative;
+  background: $gray-0;
+  @include breakpoint(map-get($breakpoints, med)) {
+    background: transparent;
+    padding: $rh-sml 0;
+    position: relative;
   }
 }
 .navbar--global {
@@ -222,6 +233,18 @@
 
 .navbar__form {
   @include breakpoint(map-get($breakpoints, lrg)) {
+    width: 350px;
+  }
+}
+
+.navbar__form-2 {
+  @include breakpoint(map-get($breakpoints, med)) {
+    width: 250px;
+  }
+  @include breakpoint(map-get($breakpoints, lrg)) {
+    width: 250px;
+  }
+  @include breakpoint(1060px) {
     width: 350px;
   }
 }

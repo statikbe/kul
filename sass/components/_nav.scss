@@ -52,6 +52,36 @@
     }
   } // end .-main
 
+  &--main__2 {
+    display: none;
+    @include breakpoint(map-get($breakpoints, med)) {
+      @extend %ext-default-nav;
+      @include fsRem(18px);
+      text-transform: uppercase;
+      font-weight: $font-weight-bold;
+      letter-spacing: $letter-spacing-sml;
+      margin: 0;
+      display: block;
+      li {
+        float: left;
+      }
+      a {
+        @include link-variant($gray-75, $blue-75);
+        display: block;
+        padding: 8px 0;
+        text-decoration: none;
+      }
+      li + li {
+        margin-left: $rh-med;
+      }
+    }
+    @include breakpoint(map-get($breakpoints, lrg)) {
+      li + li {
+        margin-left: $rh-xlr;
+      }
+    }
+  } // end .-main__2
+
   &--service {
     @extend %ext-default-nav;
     margin: 16px 0;
@@ -77,6 +107,37 @@
     }
     &--small {
       margin: 9px 0;
+    }
+  }
+
+  &--service__2 {
+    display: none;
+    @include breakpoint(map-get($breakpoints, med)) {
+      display: block;
+      @extend %ext-default-nav;
+      margin: 16px 0;
+      li + li {
+        border-left: 0;
+        margin-left: $rh-med;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+        &:hover {
+          color: rgba($white, .75);
+        }
+      }
+      .dropdown__menu {
+        li + li {
+          margin: 0;
+        }
+      }
+      @include breakpoint(map-get($breakpoints, lrg), max-width) {
+        clear: left;
+      }
+      &--small {
+        margin: 9px 0;
+      }
     }
   }
 
@@ -136,6 +197,20 @@
     }
   }
 
+  &--user__2 {
+    margin-top: 10px;
+    float: left;
+    a {
+      text-align: right;
+      text-decoration: none;
+    }
+    .dropdown-toggle {
+      display: inline-block;
+      // padding: 9px 0 5px;
+      // border-bottom: 4px solid transparent;
+    }
+  }
+
   &--list {
     line-height: lh($line-height-base);
     li {
@@ -161,4 +236,14 @@
 }
 .navbar--global.collapse.in + .navbar--local .navbar__title {
   margin-bottom: 12px;
+}
+
+.pull--left-custom {
+  clear: both;
+  padding-top: $rh-sml;
+  @include breakpoint(map-get($breakpoints, lrg)) {
+    clear: none;
+    float: left;
+    padding-top: 0;
+  }
 }

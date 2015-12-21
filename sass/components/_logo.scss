@@ -22,3 +22,19 @@
     z-index: $zindex-layer-2;
   }
 }
+
+.logo-2 {
+  margin-top: -25px;
+  width: 157px;
+  height: 56px;
+  @include breakpoint(map-get($breakpoints, med)) {
+    margin-top: -55px;
+    width: 157px;
+    height: 56px;
+  }
+  @include breakpoint(980px) {
+    margin-top: 0;
+    width: 126px;
+    height: 45px;
+  }
+}
