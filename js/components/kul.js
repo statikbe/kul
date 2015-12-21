@@ -73,7 +73,7 @@ app.kul = (function($, undefined) {
             $list = $menu.find('ul'),
             menuWidth = $menu.width();
 
-        var $moreItem = $('<li class="nav__more"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Meer <i class="material-icons">keyboard_arrow_down</i></a><ul class="dropdown__menu"></ul></li>'),
+        var $moreItem = $('<li class="nav__more"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Meer <i class="material-icons">&#xE313;</i></a><ul class="dropdown__menu"></ul></li>'),
             $moreList = $moreItem.find('ul');
         $list.append($moreItem);
 

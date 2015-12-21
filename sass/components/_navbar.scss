@@ -221,7 +221,6 @@
 }
 
 .navbar__form {
-  width: 250px;
   @include breakpoint(map-get($breakpoints, lrg)) {
     width: 350px;
   }
