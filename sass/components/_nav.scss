@@ -186,10 +186,11 @@
 
   &--user {
     margin-top: 10px;
-    float: left;
+    float: right;
     @include breakpoint(800px) {
+      position: absolute;
       margin-top: -53px;
-      float: none;
+      right: 0;
     }
     .nav--user-name {
       display: none;
