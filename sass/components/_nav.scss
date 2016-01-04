@@ -173,6 +173,17 @@
     }
   } // end .-language
 
+   &--widget-kuleuven-login-form {
+    li {
+      display: inline;
+    }
+    li + li {
+      border-left: 1px solid $gray-25;
+      margin-left: ($rh-xsm + 5);
+      padding-left: ($rh-xsm + 5);
+    }
+  }
+
   &--user {
     margin-top: 10px;
     float: left;
