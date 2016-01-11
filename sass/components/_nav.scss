@@ -39,6 +39,7 @@
     @extend %ext-default-nav;
     @include fsRem(18px);
     text-transform: uppercase;
+    font-family: $font-family-base;
     font-weight: $font-weight-bold;
     letter-spacing: $letter-spacing-sml;
     a {
@@ -58,6 +59,7 @@
       @extend %ext-default-nav;
       @include fsRem(18px);
       text-transform: uppercase;
+      font-family: $font-family-base;
       font-weight: $font-weight-bold;
       letter-spacing: $letter-spacing-sml;
       margin: 0;
@@ -70,6 +72,7 @@
         display: block;
         padding: 8px 0;
         text-decoration: none;
+        border-bottom: none !important;
       }
       li + li {
         margin-left: $rh-med;
@@ -92,6 +95,7 @@
     }
     a {
       text-decoration: none;
+      border-bottom: none !important;
       &:hover {
         color: rgba($white, .75);
       }
@@ -122,6 +126,7 @@
         padding: 0;
       }
       a {
+        border-bottom: none !important;
         text-decoration: none;
         &:hover {
           color: rgba($white, .75);
@@ -149,6 +154,7 @@
     li a {
       padding: $rh-xsm 0;
       font-weight:$font-weight-semibold;
+      border-bottom: none !important;
     }
   } // end .nav--tabs
 
@@ -167,6 +173,7 @@
       display: block;
       text-decoration: none;
       padding: $rh-xsm 0;
+      border-bottom: none !important;
       &.active {
         color: $blue-50;
       }
@@ -218,6 +225,7 @@
     }
     .dropdown-toggle {
       display: inline-block;
+      border-bottom: none !important;
       // padding: 9px 0 5px;
       // border-bottom: 4px solid transparent;
     }

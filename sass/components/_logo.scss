@@ -5,6 +5,7 @@
   width: 157px;
   height: 56px;
   margin-right: $rh-med;
+  border-bottom: none !important;
   .no-svg & {
     background-image: url(//stijl.kuleuven.be/2016tmp/img/logo.png);
   }
@@ -27,6 +28,7 @@
   margin-top: -25px;
   width: 157px;
   height: 56px;
+  border-bottom: none !important;
   @include breakpoint(map-get($breakpoints, med)) {
     margin-top: -55px;
     width: 157px;

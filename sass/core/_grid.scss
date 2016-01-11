@@ -9,6 +9,17 @@
     position: relative;
   }
 }
+.container--small {
+  @include container-fluid;
+  @if $breakpoints-legacy {
+    width: $breakpoints-legacy;
+  } @else {
+    max-width: $grid-container-width-2014;
+  }
+  &--relative {
+    position: relative;
+  }
+}
 .container--fluid {
   @include container-fluid;
 }

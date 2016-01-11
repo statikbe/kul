@@ -2,6 +2,10 @@
   @include clearfix();
   padding: $rh-sml 0;
   position: relative;
+  font-family: $font-family-base;
+  // @include fsRem($font-size-base);
+  font-weight: $font-weight-base;
+  line-height: lh($line-height-base);
   &--no-padding {
     padding: 0;
   }
@@ -78,7 +82,7 @@
   position: relative;
   background: $gray-0;
   @include breakpoint(map-get($breakpoints, med)) {
-    background: transparent;
+    background: $white;
     padding: $rh-sml 0;
     position: relative;
   }
@@ -244,9 +248,9 @@
   @include breakpoint(map-get($breakpoints, lrg)) {
     width: 220px;
   }
-  @include breakpoint(1120px) {
-    width: 350px;
-  }
+  // @include breakpoint(1120px) {
+  //   width: 350px;
+  // }
 }
 
 .navbar__title {
