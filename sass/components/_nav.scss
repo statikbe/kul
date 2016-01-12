@@ -119,7 +119,7 @@
     @include breakpoint(map-get($breakpoints, med)) {
       display: block;
       @extend %ext-default-nav;
-      margin: 16px 0;
+      margin: 9px 0;
       li + li {
         border-left: 0;
         margin-left: $rh-med;

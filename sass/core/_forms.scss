@@ -109,6 +109,7 @@ form {
     .form__text {
       background: rgba($white, .1);
       color: $white;
+      font-size: 14px;
       border-radius: 0;
       border: none;
       &::-webkit-input-placeholder {
