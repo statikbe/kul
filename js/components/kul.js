@@ -36,7 +36,8 @@ app.kul = (function($, undefined) {
       next: '&rsaquo;',
       previous: '&lsaquo;',
       maxWidth: '90%',
-      maxHeight: '90%'
+      maxHeight: '90%',
+      photo: true
     });
 
     $('.colorbox--video').colorbox({
