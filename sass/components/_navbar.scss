@@ -249,9 +249,9 @@
   @include breakpoint(map-get($breakpoints, lrg)) {
     width: 220px;
   }
-  // @include breakpoint(1120px) {
-  //   width: 350px;
-  // }
+  @include breakpoint(1120px) {
+    width: 350px;
+  }
 }
 
 .navbar__title {
