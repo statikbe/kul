@@ -9,4 +9,9 @@
       transform: translateX(-240px);
     }
   }
+  @include breakpoint($breakpoints-flyout) {
+    &.collapse {
+      display: block;
+    }
+  }
 }

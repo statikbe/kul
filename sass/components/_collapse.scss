@@ -1,8 +1,5 @@
 .collapse {
   display: none;
-  // @include breakpoint(map-get($breakpoints, med)) {
-  //   display: block;
-  // }
   &.in {
     display: block;
     &.btn {
