@@ -88,12 +88,10 @@
     };
   }
   .excerpt--hz-small & {
+    float: left;
     width: 40px;
     margin-right: 0;
-    .excerpt__aside {
-      float: left;
-      margin-bottom: 0;
-    }
+    margin-bottom: 0;
     ~ .excerpt__main {
       margin-left: 50px;
     }
