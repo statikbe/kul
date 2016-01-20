@@ -243,8 +243,13 @@
 }
 
 .navbar__form-2 {
+  width: 100%;
+  margin-bottom: 12px;
+  margin-top: -8px;
   @include breakpoint(map-get($breakpoints, med)) {
     width: 235px;
+    margin-bottom: 0;
+    margin-top: 0;
   }
   @include breakpoint(map-get($breakpoints, lrg)) {
     width: 220px;

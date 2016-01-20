@@ -120,7 +120,7 @@
       margin: 9px 0;
       li + li {
         border-left: 0;
-        margin-left: $rh-med;
+        margin-left: 18px;
         padding: 0;
       }
       a {
@@ -139,6 +139,46 @@
       }
       &--small {
         margin: 9px 0;
+      }
+    }
+    @include breakpoint(map-get($breakpoints, lrg)) {
+      li + li {
+        margin-left: $rh-med;
+      }
+    }
+  }
+
+  &--service__sep {
+     display: none;
+    @include breakpoint(map-get($breakpoints, med)) {
+      display: block;
+      border-left: 1px solid darken($petrol-50, 8%)!important;
+      padding-left: 10px;
+      @extend %ext-default-nav;
+      margin: 9px 0 9px 10px;
+      li + li {
+        border-left: 0;
+        margin-left: 18px;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+        &:hover {
+          color: rgba($white, .75);
+        }
+      }
+      .dropdown__menu {
+        li + li {
+          margin: 0;
+        }
+      }
+      &--small {
+        margin: 9px 0;
+      }
+    }
+    @include breakpoint(map-get($breakpoints, lrg)) {
+      li + li {
+        margin-left: $rh-med;
       }
     }
   }
@@ -174,6 +214,9 @@
       }
     }
   } // end .-language
+
+  &--language__2 {
+  } // end .-language__2
 
    &--widget-kuleuven-login-form {
     li {
@@ -212,17 +255,9 @@
   }
 
   &--user__2 {
-    margin-top: 10px;
-    float: left;
-    a {
-      text-align: right;
-      text-decoration: none;
-    }
-    .dropdown-toggle {
-      display: inline-block;
-      // padding: 9px 0 5px;
-      // border-bottom: 4px solid transparent;
-    }
+    border-left: 1px solid darken($petrol-50, 8%)!important;
+    padding-left: 10px !important;
+    margin-left: 12px !important;
   }
 
   &--list {
@@ -259,6 +294,13 @@
     clear: none;
     float: left;
     padding-top: 0;
+  }
+}
+
+.pull--right-search {
+  float: right;
+  @include breakpoint(map-get($breakpoints, med), max-width) {
+    width: 100%;
   }
 }
 
