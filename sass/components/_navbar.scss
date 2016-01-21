@@ -263,6 +263,7 @@
   font-weight: $font-weight-bold;
   letter-spacing: $letter-spacing-xms;
   text-transform: uppercase;
+  margin-bottom: 10px !important;
   .navbar--local & {
     color: $color-secondary;
     width: 100%;
@@ -271,7 +272,7 @@
     }
   }
   &--no-margin {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 }
 .navbar__subtitle {
