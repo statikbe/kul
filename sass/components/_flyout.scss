@@ -18,6 +18,12 @@
     }
   }
 
+  hr {
+    margin-top: ($rh-sml - 4);
+    margin-bottom: ($rh-sml - 4);
+    border: 0;
+    border-top: 1px solid darken($petrol-50, 8%);
+  }
   // .flyout__back,
   // .flyout__close {
   //   font-family: $font-family-sans;
@@ -59,6 +65,7 @@
     li {
       display: block;
       float: none;
+      margin-top: -3px;
       & + li {
         border: none;
         margin-left: 0;
@@ -87,7 +94,10 @@
       a {
         padding: 5px 0;
       }
-    }  // end --inline
+    }  // end --service
+    &--login {
+      margin-top: ($rh-sml - 4);
+    }
   }
   .dropdown {
     position: static;

@@ -156,9 +156,11 @@
       padding-left: 10px;
       @extend %ext-default-nav;
       margin: 9px 0 9px 10px;
+      li {
+        list-style-type: none;
+      }
       li + li {
         border-left: 0;
-        margin-left: 18px;
         padding: 0;
       }
       a {
@@ -174,11 +176,6 @@
       }
       &--small {
         margin: 9px 0;
-      }
-    }
-    @include breakpoint(map-get($breakpoints, lrg)) {
-      li + li {
-        margin-left: $rh-med;
       }
     }
   }
