@@ -168,3 +168,9 @@
 .excerpt--alumni {
   padding: $rh-sml 0;
 }
+
+.block--primary {
+  .excerpt + .excerpt {
+    border-top: 1px solid $petrol-50;
+  }
+}
