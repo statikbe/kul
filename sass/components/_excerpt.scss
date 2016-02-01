@@ -171,6 +171,18 @@
 
 .block--primary {
   .excerpt + .excerpt {
-    border-top: 1px solid $petrol-50;
+    border-top: 1px solid darken($blue-50, 4.5%);
+  }
+}
+
+.block--secondary {
+  .excerpt + .excerpt {
+    border-top: 1px solid darken($petrol-50, 4.5%);
+  }
+}
+
+.block--bg-dark {
+  .excerpt + .excerpt {
+    border-top: 1px solid $gray-50;
   }
 }
