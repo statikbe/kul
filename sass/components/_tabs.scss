@@ -19,7 +19,7 @@
     position: relative;
     z-index: $zindex-layer-1;
     display: inline-block;
-    margin: 0 $rh-sml;
+    margin: 0 ($rh-xsm + 4);
     text-transform: uppercase;
     &:last-child {
       margin-right: 0;

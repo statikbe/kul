@@ -169,6 +169,7 @@
   padding: $rh-sml 0;
 }
 
+// Excerpt border-top color
 .block--primary {
   .excerpt + .excerpt {
     border-top: 1px solid darken($blue-50, 4.5%);
@@ -184,5 +185,25 @@
 .block--bg-dark {
   .excerpt + .excerpt {
     border-top: 1px solid $gray-50;
+  }
+}
+
+// Excerpt padding + list--unordered last-child inside a block
+
+.block {
+  .excerpt {
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+  .excerpt--activity {
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+  .list--unordered {
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
