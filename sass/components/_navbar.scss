@@ -33,6 +33,7 @@
       }
       @include breakpoint(map-get($breakpoints, med)) {
         display: block;
+        height: auto !important;
       }
       @include breakpoint(map-get($breakpoints, med), max-width) {
         display: none;
