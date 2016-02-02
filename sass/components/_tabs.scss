@@ -21,6 +21,9 @@
     display: inline-block;
     margin: 0 $rh-sml;
     text-transform: uppercase;
+    &:last-child {
+      margin-right: 0;
+    }
     & + & {
     }
     a {
