@@ -196,7 +196,9 @@ iframe {
 }
 
 .pull--bp-custom--right {
-  clear: both;
+  @include breakpoint(1080px, max-width) {
+    clear: both;
+  }
   @include breakpoint(1080px, min-width) {
     float: right;
   }
