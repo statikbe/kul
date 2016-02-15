@@ -1,21 +1,22 @@
 .flyout {
   @include transitions((transform));
   width: 240px;
-  transform: translateX(240px);
+  transform: translateX(260px);
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   font-size: 14px;
-  padding: $rh-xsm;
+  padding: $rh-xsm 20px $rh-xsm $rh-xsm;
   overflow: hidden;
+  overflow-y: scroll;
   background: $color-secondary;
   border-left: 2px solid rgba($black, .1);
   color: $white;
   z-index: $zindex-layer-2;
   @include breakpoint($breakpoints-flyout, max-width) {
     &.in {
-      transform: translateX(0);
+      transform: translateX(10px);
     }
   }
 
