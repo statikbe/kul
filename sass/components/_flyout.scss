@@ -80,7 +80,7 @@
     &--main {
       float: none;
       a {
-        padding: 5px 25px 5px 0;
+        padding: 3px 25px 3px 0;
         position: relative;
         &:after {
           content: '\E315';
@@ -97,10 +97,15 @@
       }
     }  // end --service
     &--login {
-      margin-top: ($rh-sml - 4);
-      margin-bottom: ($rh-sml - 4);
-      padding-bottom: ($rh-sml - 4);
-      border-bottom: 1px solid darken($petrol-50, 8%);
+      margin-top: ($rh-sml - 6);
+      margin-bottom: ($rh-sml - 6);
+      padding-bottom: ($rh-sml - 6);
+      border-bottom: 1px solid darken($petrol-50, 6%);
+      a {
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
     }
   }
   .dropdown {

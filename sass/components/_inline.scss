@@ -42,7 +42,24 @@
     border-right: 1px solid;
 
     &:last-child {
-      border-right:0;
+      border-right: 0;
+    }
+  }
+}
+
+.inline--footer {
+  .inline__item {
+    border-left: none;
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @include breakpoint(590px) {
+      border-left: 1px solid;
+      margin-bottom: 0;
+    }
+    &:first-child {
+      border-left: 0;
     }
   }
 }
