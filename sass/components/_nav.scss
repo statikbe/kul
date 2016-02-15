@@ -29,7 +29,7 @@
       text-decoration: underline;
       display: inline-block;
       &:hover {
-        color: rgba($white, .75);
+        color: darken($blue-75, 10%);
         text-decoration: none;
       }
     }
