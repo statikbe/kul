@@ -25,14 +25,17 @@
   }
 
   &--share {
-    @include inline-variant(($rh-xxs / 2));
+    @include inline-variant(($rh-xxs / 4));
     font-family: $font-family-serif;
     font-style: italic;
+    @include breakpoint(map-get($breakpoints, sml)){
+      @include inline-variant(($rh-xxs / 2));
+    }
     a {
       @include link-variant($blue-75);
     }
     .inline__item:first-child {
-      margin-right: $rh-xsm;
+      margin-right: ($rh-xxs - 3); // 2px
     }
   }
 }
