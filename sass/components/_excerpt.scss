@@ -214,11 +214,17 @@
 
 .block {
   .excerpt {
+    &:first-child {
+      padding-top: 0;
+    }
     &:last-child {
       padding-bottom: 0;
     }
   }
   .excerpt--activity {
+    &:first-child {
+      padding-top: 0;
+    }
     &:last-child {
       padding-bottom: 0;
     }
