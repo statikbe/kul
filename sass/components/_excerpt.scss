@@ -169,16 +169,38 @@
   padding: $rh-sml 0;
 }
 
-// Excerpt border-top color
+// Excerpt colors inside a block
 .block--primary {
   .excerpt + .excerpt {
     border-top: 1px solid darken($blue-50, 4.5%);
+  }
+  .excerpt {
+    .meta {
+      color: darken($petrol-50, 8%);
+    }
   }
 }
 
 .block--secondary {
   .excerpt + .excerpt {
     border-top: 1px solid darken($petrol-50, 4.5%);
+  }
+  .excerpt {
+    .meta {
+      color: darken($petrol-50, 12%);
+    }
+  }
+}
+
+.block--tertiary {
+  .excerpt + .excerpt {
+    border-top: 1px solid #33668d;
+    // border-top: 1px solid darken($blue-50, 4.5%);
+  }
+  .excerpt {
+    .meta {
+      color: lighten(#33668d, 10%);
+    }
   }
 }
 
