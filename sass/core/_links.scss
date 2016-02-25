@@ -1,16 +1,16 @@
 .link {
-  &--ext {
-    position: relative;
-    display: inline-block;
-    &:after {
-      content: "\E315";
-      display: inline-block;
-      margin-left: 2px;
-      vertical-align: middle;
-      text-decoration: underline;
-      font-family: $font-family-icons;
-    }
-  }
+  // &--ext {
+  //   position: relative;
+  //   display: inline-block;
+  //   &:after {
+  //     content: "\E315";
+  //     display: inline-block;
+  //     margin-left: 2px;
+  //     vertical-align: middle;
+  //     text-decoration: underline;
+  //     font-family: $font-family-icons;
+  //   }
+  // }
   &--grayscale {
     img {
       @include grayscale;
@@ -24,6 +24,18 @@
   }
   &--no-underline {
     text-decoration: none;
+  }
+  &--intranet {
+    position: relative;
+    display: inline-block;
+    &:after {
+      content: "nogg te geveeennnn";
+      display: inline-block;
+      margin-left: 2px;
+      vertical-align: middle;
+      text-decoration: underline;
+      font-family: $font-family-icons;
+    }
   }
 }
 

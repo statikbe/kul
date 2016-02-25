@@ -49,18 +49,18 @@
 
     }
   }
-  &--ext {
-    position: relative;
-    display: inline-block;
-    &:after {
-      content: "\E315";
-      display: inline-block;
-      margin-left: 8px;
-      margin-top: -2px;
-      vertical-align: middle;
-      font-family: $font-family-icons;
-    }
-  }
+  // &--ext {
+  //   position: relative;
+  //   display: inline-block;
+  //   &:after {
+  //     content: "\E315";
+  //     display: inline-block;
+  //     margin-left: 8px;
+  //     margin-top: -2px;
+  //     vertical-align: middle;
+  //     font-family: $font-family-icons;
+  //   }
+  // }
 
   &--secondary {
     @include button-variant($white, darken($blue-50, 20%), (shade(darken($blue-50,25%)), shade(darken($blue-50,25%))));
