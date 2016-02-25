@@ -29,7 +29,7 @@
       text-decoration: underline;
       display: inline-block;
       &:hover {
-        color: rgba($white, .75);
+        color: darken($blue-75, 10%);
         text-decoration: none;
       }
     }
@@ -39,6 +39,7 @@
     @extend %ext-default-nav;
     @include fsRem(18px);
     text-transform: uppercase;
+    font-family: $font-family-base;
     font-weight: $font-weight-bold;
     letter-spacing: $letter-spacing-sml;
     a {
@@ -51,6 +52,37 @@
       margin-left: $rh-xlr;
     }
   } // end .-main
+
+  &--main__2 {
+    display: none;
+    @include breakpoint(map-get($breakpoints, med)) {
+      @extend %ext-default-nav;
+      @include fsRem(18px);
+      text-transform: uppercase;
+      font-family: $font-family-base;
+      font-weight: $font-weight-bold;
+      letter-spacing: $letter-spacing-sml;
+      margin: 0;
+      display: block;
+      li {
+        float: left;
+      }
+      a {
+        @include link-variant($gray-75, $blue-75);
+        display: block;
+        padding: 8px 0;
+        text-decoration: none;
+      }
+      li + li {
+        margin-left: $rh-med;
+      }
+    }
+    @include breakpoint(map-get($breakpoints, lrg)) {
+      li + li {
+        margin-left: $rh-xlr;
+      }
+    }
+  } // end .-main__2
 
   &--service {
     @extend %ext-default-nav;
@@ -80,6 +112,74 @@
     }
   }
 
+  &--service__2 {
+    display: none;
+    @include breakpoint(map-get($breakpoints, med)) {
+      display: block;
+      @extend %ext-default-nav;
+      margin: 9px 0;
+      li + li {
+        border-left: 0;
+        margin-left: 18px;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+        &:hover {
+          color: rgba($white, .75);
+        }
+      }
+      .dropdown__menu {
+        li + li {
+          margin: 0;
+        }
+      }
+      @include breakpoint(map-get($breakpoints, lrg), max-width) {
+        clear: left;
+      }
+      &--small {
+        margin: 9px 0;
+      }
+    }
+    @include breakpoint(map-get($breakpoints, lrg)) {
+      li + li {
+        margin-left: $rh-med;
+      }
+    }
+  }
+
+  &--service__sep {
+     display: none;
+    @include breakpoint(map-get($breakpoints, med)) {
+      display: block;
+      border-left: 1px solid darken($petrol-50, 8%)!important;
+      padding-left: 10px;
+      @extend %ext-default-nav;
+      margin: 9px 0 9px 10px;
+      li {
+        list-style-type: none;
+      }
+      li + li {
+        border-left: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+        &:hover {
+          color: rgba($white, .75);
+        }
+      }
+      .dropdown__menu {
+        li + li {
+          margin: 0;
+        }
+      }
+      &--small {
+        margin: 9px 0;
+      }
+    }
+  }
+
   &--tabs {
     @extend .tabbable;
     // .nav__item--home {
@@ -95,8 +195,8 @@
     float: right;
     text-transform: uppercase;
     border-left: 1px solid $gray-25;
-    margin-left: $rh-sml;
-    padding-left: $rh-sml;
+    margin-left: ($rh-sml - 4);
+    padding-left: ($rh-sml - 4);
     li {
       float: none;
       margin-bottom: 5px;
@@ -112,9 +212,36 @@
     }
   } // end .-language
 
+  &--language__2 {
+  } // end .-language__2
+
+   &--widget-kuleuven-login-form {
+    li {
+      display: inline;
+    }
+    li + li {
+      border-left: 1px solid $gray-25;
+      margin-left: ($rh-xsm - 1);
+      padding-left: ($rh-xsm - 1);
+    }
+  }
+
   &--user {
-    margin: 9px 0;
+    margin-top: 10px;
+    float: right;
+    @include breakpoint(800px) {
+      position: absolute;
+      margin-top: -53px;
+      right: 0;
+    }
+    .nav--user-name {
+      display: none;
+      @include breakpoint(800px) {
+        display: inline-block;
+      }
+    }
     a {
+      text-align: right;
       text-decoration: none;
     }
     .dropdown-toggle {
@@ -122,6 +249,12 @@
       // padding: 9px 0 5px;
       // border-bottom: 4px solid transparent;
     }
+  }
+
+  &--user__2 {
+    border-left: 1px solid darken($petrol-50, 8%)!important;
+    padding-left: 10px !important;
+    margin-left: 12px !important;
   }
 
   &--list {
@@ -142,4 +275,34 @@
       @include link-variant($white, $gray-25);
     }
   }
+}
+
+.navbar--global.collapse.in + .navbar .nav--user {
+  margin-top: -35px;
+}
+.navbar--global.collapse.in + .navbar--local .navbar__title {
+  margin-bottom: 12px !important;
+}
+
+.pull--left-custom {
+  clear: both;
+  padding-top: $rh-sml;
+  @include breakpoint(map-get($breakpoints, lrg)) {
+    clear: none;
+    float: left;
+    padding-top: 0;
+  }
+}
+
+.pull--right-search {
+  float: right;
+  @include breakpoint(map-get($breakpoints, med), max-width) {
+    width: 100%;
+  }
+}
+
+.pull--right__nav-user {
+  float: right;
+  position: relative;
+  width: 100%;
 }

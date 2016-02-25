@@ -4,7 +4,8 @@ $gray-100: #333333 !default;
 $gray-75: #8f8e8e !default;
 $gray-50: #bcbcbc !default;
 $gray-25: #d8d9da !default;
-$gray-0: #f0f0f0 !default;
+$gray-0: #ededed !default;
+$gray: #f9f9f9;
 
 $black: #111 !default;
 $white: #fff !default;
@@ -188,6 +189,7 @@ $rhythm: (
 $grid-gutter-width: $rh-sml !default;
 $grid-columns: 12 !default;
 $grid-container-width: 1200px !default;
+$grid-container-width-2014: 980px !default;
 
 // Transitions
 // -----------

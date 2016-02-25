@@ -10,3 +10,14 @@
     margin-top: $rh-sml;
   }
 }
+
+body {
+  &.collapse {
+    display: block;
+    &.in {
+      @include breakpoint($breakpoints-flyout, max-width) {
+        overflow-y: hidden;
+      }
+    }
+  }
+}

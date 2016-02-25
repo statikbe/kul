@@ -20,6 +20,8 @@
   color: $color-text;
   line-height: normal;
   border-radius: $border-radius-sml;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
   &:focus {
     outline: none;
     border-color: $gray-75;
@@ -107,6 +109,7 @@ form {
     .form__text {
       background: rgba($white, .1);
       color: $white;
+      font-size: 14px;
       border-radius: 0;
       border: none;
       &::-webkit-input-placeholder {

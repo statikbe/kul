@@ -18,6 +18,7 @@
 }
 
 .block {
+  position: relative;
   display: block;
   & + & {
     margin-top: $rh-sml;
@@ -47,7 +48,14 @@
     @extend %panel-block;
     background: $gray-0;
   }
-
+  &--bg-dark {
+    @extend %panel-block;
+    background: $gray-25;
+  }
+  &--bg-light {
+    @extend %panel-block;
+    background: $gray;
+  }
   &--border {
     & + & {
       border-top: 1px solid $gray-25;
@@ -93,4 +101,19 @@
       }
     }
   }
+  .btn--close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    line-height: 1;
+    padding: 5px 10px;
+    border: none;
+  }
 }
+
+// Als de block een (.alert) class heeft om hem de sluiten is een p tag maar 97% breed.
+.alert {
+    p {
+      width: 97%;
+    }
+  }

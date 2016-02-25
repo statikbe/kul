@@ -64,7 +64,6 @@
   @include breakpoint(map-get($breakpoints, sml)){
     float: left;
     width: 150px;
-    margin-right: 20px;
   };
   @include breakpoint(map-get($breakpoints, sml), 'max-width'){
     margin-bottom: $rh-med;
@@ -77,7 +76,6 @@
   .excerpt--hz-large & {
     @include breakpoint(map-get($breakpoints, sml)){
       width: 150px;
-      margin-right: 20px;
     };
     @include breakpoint(map-get($breakpoints, sml)){
       width: 210px;
@@ -90,8 +88,10 @@
     };
   }
   .excerpt--hz-small & {
+    float: left;
     width: 40px;
     margin-right: 0;
+    margin-bottom: 0;
     ~ .excerpt__main {
       margin-left: 50px;
     }
@@ -167,4 +167,71 @@
 // Alumni
 .excerpt--alumni {
   padding: $rh-sml 0;
+}
+
+// Excerpt colors inside a block
+.block--primary {
+  .excerpt + .excerpt {
+    border-top: 1px solid darken($blue-50, 4.5%);
+  }
+  .excerpt {
+    .meta {
+      color: darken($petrol-50, 8%);
+    }
+  }
+}
+
+.block--secondary {
+  .excerpt + .excerpt {
+    border-top: 1px solid darken($petrol-50, 4.5%);
+  }
+  .excerpt {
+    .meta {
+      color: darken($petrol-50, 12%);
+    }
+  }
+}
+
+.block--tertiary {
+  .excerpt + .excerpt {
+    border-top: 1px solid #33668d;
+    // border-top: 1px solid darken($blue-50, 4.5%);
+  }
+  .excerpt {
+    .meta {
+      color: lighten(#33668d, 10%);
+    }
+  }
+}
+
+.block--bg-dark {
+  .excerpt + .excerpt {
+    border-top: 1px solid $gray-50;
+  }
+}
+
+// Excerpt padding + list--unordered last-child inside a block
+
+.block {
+  .excerpt {
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+  .excerpt--activity {
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+  .list--unordered {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

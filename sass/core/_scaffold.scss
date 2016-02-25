@@ -59,7 +59,7 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-shadow: 1px 1px 1px rgba(0,0,0,.004);
+  // text-shadow: 1px 1px 1px rgba(0,0,0,.004);
 }
 // Body
 //
@@ -186,11 +186,21 @@ iframe {
 .pull--right {
   float: right;
 }
+
 @each $bp, $px in $breakpoints {
   @include breakpoint($px, min-width) {
     .pull--bp-#{$bp}--right {
       float: right;
     }
+  }
+}
+
+.pull--bp-custom--right {
+  @include breakpoint(1080px, max-width) {
+    clear: both;
+  }
+  @include breakpoint(1080px, min-width) {
+    float: right;
   }
 }
 

@@ -1,23 +1,31 @@
 .flyout {
   @include transitions((transform));
   width: 240px;
-  transform: translateX(240px);
+  transform: translateX(260px);
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
-  padding: $rh-xsm;
+  font-size: 14px;
+  padding: $rh-xsm 20px $rh-xsm $rh-xsm;
   overflow: hidden;
+  overflow-y: scroll;
   background: $color-secondary;
   border-left: 2px solid rgba($black, .1);
   color: $white;
   z-index: $zindex-layer-2;
   @include breakpoint($breakpoints-flyout, max-width) {
     &.in {
-      transform: translateX(0);
+      transform: translateX(10px);
     }
   }
 
+  // hr {
+  //   margin-top: ($rh-sml - 4);
+  //   margin-bottom: ($rh-sml - 4);
+  //   border: 0;
+  //   border-top: 1px solid darken($petrol-50, 8%);
+  // }
   // .flyout__back,
   // .flyout__close {
   //   font-family: $font-family-sans;
@@ -59,6 +67,7 @@
     li {
       display: block;
       float: none;
+      margin-top: -3px;
       & + li {
         border: none;
         margin-left: 0;
@@ -72,7 +81,7 @@
     &--main {
       float: none;
       a {
-        padding: 5px 25px 5px 0;
+        padding: 3px 25px 3px 0;
         position: relative;
         &:after {
           content: '\E315';
@@ -87,7 +96,18 @@
       a {
         padding: 5px 0;
       }
-    }  // end --inline
+    }  // end --service
+    &--login {
+      margin-top: ($rh-sml - 6);
+      margin-bottom: ($rh-sml - 6);
+      padding-bottom: ($rh-sml - 6);
+      border-bottom: 1px solid darken($petrol-50, 6%);
+      a {
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
   }
   .dropdown {
     position: static;

@@ -36,7 +36,8 @@ app.kul = (function($, undefined) {
       next: '&rsaquo;',
       previous: '&lsaquo;',
       maxWidth: '90%',
-      maxHeight: '90%'
+      maxHeight: '90%',
+      photo: true
     });
 
     $('.colorbox--video').colorbox({
@@ -73,7 +74,7 @@ app.kul = (function($, undefined) {
             $list = $menu.find('ul'),
             menuWidth = $menu.width();
 
-        var $moreItem = $('<li class="nav__more"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Meer <i class="material-icons">keyboard_arrow_down</i></a><ul class="dropdown__menu"></ul></li>'),
+        var $moreItem = $('<li class="nav__more"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Meer <i class="material-icons">&#xE313;</i></a><ul class="dropdown__menu"></ul></li>'),
             $moreList = $moreItem.find('ul');
         $list.append($moreItem);
 
@@ -146,3 +147,22 @@ window.debounce = function(func, wait, immediate) {
     if (callNow) func.apply(context, args);
   };
 };
+
+$(document).ready(function () {
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 400) {
+            $('.scroll-to-top').fadeIn();
+        } else {
+            $('.scroll-to-top').fadeOut();
+        }
+    });
+
+    $('.scroll-to-top').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+
+});
