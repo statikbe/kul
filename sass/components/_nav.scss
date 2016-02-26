@@ -11,6 +11,7 @@
   }
 }
 
+// De inline nav's van de footer zitten in _footer.scss
 .nav {
   &--inline {
     @extend %ext-default-nav;
