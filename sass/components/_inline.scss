@@ -37,6 +37,10 @@
     .inline__item:first-child {
       margin-right: ($rh-xxs - 3); // 2px
       width: 100%;
+      @include breakpoint(map-get($breakpoints, xsm)) {
+        margin-right: ($rh-xxs - 3); // 2px
+        width: auto;
+      }
     }
   }
 }
