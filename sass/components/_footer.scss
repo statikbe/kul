@@ -5,6 +5,7 @@
 .navbar--footer {
   .nav {
     &--inline {
+      clear: both;
       li {
         clear: both;
         margin-bottom: $rh-xxs;
@@ -15,6 +16,7 @@
         padding-left: 0;
       }
       @include breakpoint(560px) {
+        clear: none;
         ul {
           @include listreset;
           @include cf;
