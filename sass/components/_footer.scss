@@ -1,3 +1,37 @@
 .page-footer {
 
 }
+
+.navbar--footer {
+  .nav {
+    &--inline {
+      li {
+        clear: both;
+        margin-bottom: $rh-xxs;
+      }
+      li + li {
+        border-left: none;
+        margin-left: 0;
+        padding-left: 0;
+      }
+      @include breakpoint(560px) {
+        ul {
+          @include listreset;
+          @include cf;
+        }
+        li {
+          float: left;
+          clear: none;
+        }
+        a {
+          text-decoration: none;
+        }
+        li + li {
+          border-left: 1px solid $gray-25;
+          margin-left: $rh-xsm;
+          padding-left: $rh-xsm;
+        }
+      }
+    }
+  }
+}
