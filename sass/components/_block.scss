@@ -65,15 +65,15 @@
 
   &--primary {
     @extend %status-block;
-    background: $color-primary;
+    background: $color-primary !important;
   }
   &--secondary {
     @extend %status-block;
-    background: $color-secondary;
+    background: $color-secondary !important;
   }
   &--tertiary {
     @extend %status-block;
-    background: $color-tertiary;
+    background: $color-tertiary !important;
   }
   &--contact {
     @extend %status-block;

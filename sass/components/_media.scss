@@ -112,3 +112,12 @@
 .link--ext {
   margin-top: auto;
 }
+
+// When using a block color dont use the media body padding
+.block--primary,
+.block--secondary,
+.block--tertiary {
+  .media__body {
+    padding: 0;
+  }
+}
