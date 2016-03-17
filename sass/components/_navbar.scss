@@ -265,12 +265,16 @@
   letter-spacing: $letter-spacing-xms;
   text-transform: uppercase;
   margin-bottom: 10px !important;
-  .navbar--local & {
+  header .navbar--local & {
     color: $color-secondary;
     width: 100%;
     @include breakpoint(800px) {
       width: 65%;
     }
+  }
+  .navbar--local & {
+    color: $color-secondary;
+    width: 100%;
   }
   &--no-margin {
     margin-bottom: 0 !important;
