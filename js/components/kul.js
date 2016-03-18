@@ -31,25 +31,27 @@ app.kul = (function($, undefined) {
   };
 
   var _gallery = function() {
-    $('.colorbox').colorbox({
-      close: '&times;',
-      next: '&rsaquo;',
-      previous: '&lsaquo;',
-      maxWidth: '90%',
-      maxHeight: '90%',
-      photo: true
-    });
+    if (jQuery.fn.colorbox) {
+      $('.colorbox').colorbox({
+        close: '&times;',
+        next: '&rsaquo;',
+        previous: '&lsaquo;',
+        maxWidth: '90%',
+        maxHeight: '90%',
+        photo: true
+      });
 
-    $('.colorbox--video').colorbox({
-      close: '&times;',
-      next: '&rsaquo;',
-      previous: '&lsaquo;',
-      maxWidth: '90%',
-      maxHeight: '90%',
-      iframe: true,
-      innerWidth: 640,
-      innerHeight: 480
-    });
+      $('.colorbox--video').colorbox({
+        close: '&times;',
+        next: '&rsaquo;',
+        previous: '&lsaquo;',
+        maxWidth: '90%',
+        maxHeight: '90%',
+        iframe: true,
+        innerWidth: 640,
+        innerHeight: 480
+      });
+    }
   };
 
   var _moreMenu = function() {
