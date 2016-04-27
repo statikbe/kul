@@ -39,7 +39,7 @@
     background: $gray-0;
   }
   .parsley-error & {
-    background-color: lighten(map-get($notice-colors, 'danger'), 52%);
+    background-color: lighten(map-get($notice-colors, 'danger'), 37%);
   }
 }
 
