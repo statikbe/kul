@@ -33,5 +33,6 @@
   }
   &__prev-next {
     font-family: $font-family-icons;
+    @include fsRem(map-get($font-sizes, lrg));
   }
 }
