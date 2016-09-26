@@ -33,4 +33,22 @@
       @include link-variant(inherit);
     }
   }
+  &--info {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 3px $rh-xxs;
+    background: rgba($black, .35);
+    @include fsRem(14px);
+    @include breakpoint(map-get($breakpoints, sml)){
+      display: block;
+    };
+    a {
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
 }
