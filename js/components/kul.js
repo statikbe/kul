@@ -31,7 +31,7 @@ app.kul = (function($, undefined) {
   };
 
   var _gallery = function() {
-    if (jQuery.fn.colorbox) {
+    if ($.fn.colorbox) {
       $('.colorbox').colorbox({
         close: '&times;',
         next: '&rsaquo;',

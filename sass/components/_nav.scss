@@ -56,8 +56,8 @@
 
   &--main__2 {
     display: none;
+    @extend %ext-default-nav;
     @include breakpoint(map-get($breakpoints, med)) {
-      @extend %ext-default-nav;
       @include fsRem(18px);
       text-transform: uppercase;
       font-family: $font-family-base;
@@ -115,9 +115,9 @@
 
   &--service__2 {
     display: none;
+    @extend %ext-default-nav;
     @include breakpoint(map-get($breakpoints, med)) {
       display: block;
-      @extend %ext-default-nav;
       margin: 9px 0;
       li + li {
         border-left: 0;
@@ -150,12 +150,12 @@
   }
 
   &--service__sep {
-     display: none;
+    display: none;
+    @extend %ext-default-nav;
     @include breakpoint(map-get($breakpoints, med)) {
       display: block;
       border-left: 1px solid darken($petrol-50, 8%)!important;
       padding-left: 10px;
-      @extend %ext-default-nav;
       margin: 9px 0 9px 10px;
       li {
         list-style-type: none;
