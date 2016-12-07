@@ -10,12 +10,12 @@
     margin-bottom: $rh-lrg;
     .progress__bar {
       position: relative;
-      &:nth-child(even) {
-        .progress__text {
-          top: auto;
-          bottom: -$line-height-base;
-        }
-      }
+      // &:nth-child(even) {
+      //   .progress__text {
+      //     top: auto;
+      //     bottom: -$line-height-base;
+      //   }
+      // }
     }
     .progress__text {
       position: absolute;
@@ -29,8 +29,8 @@
   float: left;
   width: 0;
   height: 100%;
-  color: map-get($notice-colors, info);
-  background-color: map-get($notice-colors, info);
+  color: map-get($notice-colors, gray);
+  background-color: map-get($notice-colors, gray);
   &:first-child {
     border-radius: 10px 0 0 10px;
   }
